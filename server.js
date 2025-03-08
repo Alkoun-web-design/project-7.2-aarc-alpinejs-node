@@ -82,7 +82,7 @@ app.post('/',
         }
     } else if (req.body.form === 'Interest Form') {
         if (!errors.isEmpty()) {
-            return res.status(422).json({ errors: errors.array() })
+            return res.status(400).json({ errors: errors.array() })
         } else {
             console.log(req.body);
             let mailOptions = {
@@ -110,7 +110,7 @@ app.post('/',
         }
     } else if(req.body.form === 'Seek Therapy Form') { 
         if (!errors.isEmpty()) {
-            return res.status(422).json({ errors: errors.array() })
+            return res.status(400).json({ errors: errors.array() })
         } else {
             console.log(req.body);
             let mailOptions = {

@@ -108,7 +108,7 @@ const sendMailData = (sendData, sendButton, sendIcon, successMsg, failureMsg) =>
 //Contact Us Form
 contactUsForm.addEventListener('submit', (e) => {
   e.preventDefault();
-
+  
   let formData = {
     form: 'Contact Form', 
     firstName : contactUsFirstName.value.trim(), 
@@ -118,8 +118,9 @@ contactUsForm.addEventListener('submit', (e) => {
     message : contactUsMessage.value.trim()
   }
 
-  sendMailData(formData, contactUsButton, contactLoadingIcon, contactSuccess, contactFailure)
-  // sendMailData(formData)
+    sendMailData(formData, contactUsButton, contactLoadingIcon, contactSuccess, contactFailure)
+    // sendMailData(formData)
+
 })
 
 //Seek Therapy Form
@@ -136,8 +137,9 @@ seekTherapyForm.addEventListener('submit', (e) => {
     needs: seekTherapyNeeds.value.trim()
   }
 
-  sendMailData(formData, seekTherapyButton, seekTherapyLoadingIcon, seekTherapySuccess, seekTherapyFailure);
-  // sendMailData(formData)
+    sendMailData(formData, seekTherapyButton, seekTherapyLoadingIcon, seekTherapySuccess, seekTherapyFailure);
+    // sendMailData(formData)
+
 })
   
 //Interest Form
@@ -154,7 +156,8 @@ interestForm.addEventListener('submit', (e) => {
     otherQualifications: interestOtherQualifications.value.trim(), 
     interest: interestInterest.value
   }
-  
+
   sendMailData(formData, interestButton, interestLoadingIcon, joinAarcSuccess, joinAarcFailure)
   // sendMailData(formData)
+
 })  
