@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Work Sans';
+    src: url('../fonts/work-sans-v19-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/outfit-v11-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  [x-cloak] { display: none !important; }
+
+  #success-modal::backdrop {
+    /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent black */
+    backdrop-filter: blur(15px); /* Add blur effect */
+  }
+  /* .bg-radial-aurora {
+    background: radial-gradient(circle at center,
+      rgba(74, 144, 163, 0.2) 0%,
+      rgba(178, 196, 187, 0.1) 50%,
+      transparent 100%);
+  } */
+
+  /* @layer utilities {
+    .animate-gradient-radial {
+      background-size: 200% 200%;
+      animation: gradient-radial 15s ease infinite;
+    }
+
+    .color-warm {
+      background-color: rgba(255, 166, 42, 0.426);
+    }
+  
+    @keyframes gradient-radial {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+
+  @layer utilities {
+    .animate-ripple-gradient { */
+      /* background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(30, 59, 138, 0.667) 100%); */
+      /* background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255, 166, 42, 0.426) 100%);
+      background-size: 200% 200%;
+      animation: ripple-effect 10s ease-in-out infinite;
+    }
+  
+    @keyframes ripple-effect {
+      0%, 100% {
+        background-size: 100% 100%;
+        background-position: center center;
+      }
+      50% {
+        background-size: 300% 300%;
+        background-position: center center;
+      }
+    }
+  }
+
+  @keyframes particle {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0); }
+  }
+  
+  .animate-particles circle {
+    animation: particle 3s infinite alternate;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .animate-wave {
+    animation: wave 10s linear infinite;
+  } */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

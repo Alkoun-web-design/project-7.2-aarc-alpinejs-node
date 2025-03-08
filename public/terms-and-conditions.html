@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="At AARC, we endeavour to facilitate a path to wellbeing 
+        from a holistic perspective, that would honour trust and confidentiality. Our carefully 
+        vetted team of professionals will initiate the therapeutic connection with sincerity and 
+        integrity, encouraging a dialogue that would establish rapport.">
+
+        <title>AARC | Assessment, Advisory and Remedial Center</title>
+        <link rel="icon" type="image/x-icon" href="./assets/img/aarc-logo-sm-rw.svg">
+        <link href="./assets/css/output.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <!-- <script defer src="/assets/js/anime.min.js"></script> -->
+    </head>
+    <body class="font-outfit" x-data="{scrolledFromTop: false}" x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false">
+        
+          <!-- ====== Navbar Section Start -->
+
+    <header x-data=" { navbarOpen: false, submenuOpen: false } " class="bg-white flex items-center w-full" >
+        <div class="container mx-auto xl:mx-10">
+          <div class="relative flex items-center justify-between -mx-4">
+            <div class="max-w-full px-4 w-60">
+              <a href="index.html" class="block w-full">
+                <img src="assets/img/aarc-logo-lg-rw.svg" alt="AARC Therapy Logo" class="w-20" />
+              </a>
+            </div>
+            <div class="flex items-center justify-end w-full px-4">
+              <div>
+                <button @click="navbarOpen = !navbarOpen" :class="navbarOpen && 'navbarTogglerActive' " id="navbarToggler" class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-[#4A90A3] focus:ring-2 lg:hidden" >
+                  <span class="bg-[#4A90A3] relative my-[6px] block h-[2px] w-[30px]" ></span>
+                  <span class="bg-[#4A90A3] relative my-[6px] block h-[2px] w-[30px]" ></span>
+                  <span class="bg-[#4A90A3] relative my-[6px] block h-[2px] w-[30px]" ></span>
+                </button>
+                <nav :class="!navbarOpen && 'hidden' " id="navbarCollapse" class="absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 shadow lg:static lg:block lg:w-full lg:max-w-full lg:py-0 lg:px-6 lg:shadow-none lg:bg-transparent" >
+                  <ul class="block lg:flex">
+                    <li class="group relative">
+                      <a href="index.html" class="flex border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out px-6 text-base font-medium text-[#4A90A3] lg:ml-8 lg:inline-flex py-2 lg:px-0">Home</a>
+                    </li>
+                    <li class="group submenu-item relative lg:ml-8">
+                       <a href="javascript:void(0)" @click="submenuOpen = !submenuOpen" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out relative flex px-6 text-base font-medium text-[#4A90A3] after:absolute after:right-5 after:top-1/2 after:mt-[-2px] after:h-2 after:w-2 after:translate-y-[-50%] after:rotate-45 after:border-b-2 after:border-r-2 after:border-current lg:inline-flex py-2 lg:pl-0 lg:pr-4 lg:after:right-0">About Us</a>
+                       <div :class="!submenuOpen ? 'hidden lg:block' : 'block' " class="relative top-full left-0 rounded-lg bg-white px-4 transition-all group-hover:opacity-100 lg:invisible lg:absolute lg:top-[115%] lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full" >
+                         <a href="index.html#about-aarc" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out block rounded py-[10px] px-4 text-sm font-medium text-[#4A90A3] hover:bg-[#4A90A3] hover:text-white">Why Choose Us?</a>
+                         <a href="index.html#our-team" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out block rounded py-[10px] px-4 text-sm font-medium text-[#4A90A3] hover:bg-[#4A90A3] hover:text-white">Our Team</a>
+                         <a href="privacy-policy.html" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out block rounded py-[10px] px-4 text-sm font-medium text-[#4A90A3] hover:bg-[#4A90A3] hover:text-white">Privacy Policy</a>
+                         <a href="terms-and-conditions.html" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-outhover:bg-[#4A90A3] block rounded py-[10px] px-4 text-sm font-medium text-[#4A90A3] hover:bg-[#4A90A3] hover:text-white">Terms & Conditions</a>
+                       </div>
+                    </li>
+                    <li class="group relative">
+                      <a href="index.html#seek-therapy" class="flex px-6 text-base font-medium text-[#4A90A3] border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out lg:ml-8 lg:inline-flex py-2 lg:px-0">Seek Therapy</a>
+                    </li>
+                    <li class="group relative">
+                      <a href="index.html#workshops" class="flex px-6 text-base font-medium text-[#4A90A3] border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out lg:ml-8 lg:inline-flex py-2 lg:px-0">Workshops</a>
+                    </li>
+                    <li class="group relative">
+                      <a href="index.html#join-aarc" class="flex px-6 text-base font-medium text-[#4A90A3] border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out lg:ml-8 lg:inline-flex py-2 lg:px-0">Join AARC</a>
+                    </li>
+                    <li class="group relative">
+                      <a href="index.html#contact-us" class="flex px-6 text-base font-medium text-[#4A90A3] border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out lg:ml-8 lg:inline-flex py-2 lg:px-0">Contact Us</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ====== Navbar Section End -->
+
+
+        <main>
+
+            <!-- ====== Privacy Policy Section Start -->
+            <section class="py-20 lg:py-[120px] bg-white dark:bg-dark">
+                <div class="container mx-auto">
+                   <div class="flex flex-wrap justify-center -mx-4">
+                      <div class="w-full px-4 lg:w-10/12 xl:w-8/12">
+                         <div class="w-full">
+                            <h2 class="font-serif mb-6 text-[26px] leading-normal text-dark dark:text-white sm:text-3xl sm:leading-snug md:text-4xl md:leading-snug" >
+                                Terms & Conditions                
+                            </h2>
+                            <!-- <div class="flex flex-wrap items-center pb-4">
+                               <div class="flex items-center mb-4">
+                                  <p class="flex items-center mr-5 text-sm font-medium text-body-color dark:text-dark-6 md:mr-8" >
+                                     <span class="mr-3">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                           <path d="M14 2.6499H12.7V2.0999C12.7 1.7999 12.45 1.5249 12.125 1.5249C11.8 1.5249 11.55 1.7749 11.55 2.0999V2.6499H4.42505V2.0999C4.42505 1.7999 4.17505 1.5249 3.85005 1.5249C3.52505 1.5249 3.27505 1.7749 3.27505 2.0999V2.6499H2.00005C1.15005 2.6499 0.425049 3.3499 0.425049 4.2249V12.9249C0.425049 13.7749 1.12505 14.4999 2.00005 14.4999H14C14.85 14.4999 15.575 13.7999 15.575 12.9249V4.1999C15.575 3.3499 14.85 2.6499 14 2.6499ZM1.57505 7.2999H3.70005V9.7749H1.57505V7.2999ZM4.82505 7.2999H7.45005V9.7749H4.82505V7.2999ZM7.45005 10.8999V13.3499H4.82505V10.8999H7.45005ZM8.57505 10.8999H11.2V13.3499H8.57505V10.8999ZM8.57505 9.7749V7.2999H11.2V9.7749H8.57505ZM12.3 7.2999H14.425V9.7749H12.3V7.2999ZM2.00005 3.7749H3.30005V4.2999C3.30005 4.5999 3.55005 4.8749 3.87505 4.8749C4.20005 4.8749 4.45005 4.6249 4.45005 4.2999V3.7749H11.6V4.2999C11.6 4.5999 11.85 4.8749 12.175 4.8749C12.5 4.8749 12.75 4.6249 12.75 4.2999V3.7749H14C14.25 3.7749 14.45 3.9749 14.45 4.2249V6.1749H1.57505V4.2249C1.57505 3.9749 1.75005 3.7749 2.00005 3.7749ZM1.57505 12.8999V10.8749H3.70005V13.3249H2.00005C1.75005 13.3499 1.57505 13.1499 1.57505 12.8999ZM14 13.3499H12.3V10.8999H14.425V12.9249C14.45 13.1499 14.25 13.3499 14 13.3499Z" fill="currentColor" />
+                                        </svg>
+                                     </span>
+                                     <span>26 Feb 2023</span>
+                                  </p>
+                               </div>
+                            </div> -->
+                            <p class="text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                Please read these Terms and conditions of use (‘Terms’) carefully before using the website (‘www.aarctherapy.com’).
+                            </p>
+                            <!-- <div class="py-10 overflow-hidden rounded">
+                            </div> -->
+                            <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                In these Terms, "you" and "your(s)" refer to the person or organisation accessing and using the website. "We", "us" 
+                                and "our" refer to AARC.
+                            </p>
+                        
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Introduction</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                The website is the property of AARC Pvt.Ltd. and you may only access and use the it if you agree to be legally 
+                                bound by these Terms. If you do not agree to be legally bound by these Terms, please do not access and/or use 
+                                the website. You will be deemed to have accepted these Terms if you commence or continue to access and use 
+                                the website, and you will continue to be bound by these Terms for so long as you access or use the website.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Changes to these Terms</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                AARC may make changes to the website, including these Terms, at any time. You agree that you will be 
+                                legally bound by the updated or amended Terms from the first time you use the website after the updated 
+                                version is published on www.aarctherapy.com 
+                            </p>
+                            
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Copyright</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                Copyright in the website (including content, applications and design) is owned by, or is used by AARC 
+                                All copyrighted material is protected by Pakistani and international copyright and other intellectual property laws.
+                                Apart from fair dealing for the purposes of private study, research, criticism or review, as permitted under 
+                                Copyright laws and apart from uses specifically authorised by these Terms, you may not in any form or by any means 
+                                adapt, reproduce, store, create derivative works, distribute, print, display, perform, publish or commercialise any 
+                                information, products or services obtained from any part of the website without written permission AARC 
+                                reserves the right to grant or refuse permission or to impose any conditions on any permission that is granted. 
+                                To obtain permission you must request permission in writing.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Trade Marks</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                The ‘AARC’ mark (name) and device (logo) are trademarks owned by the AARC. Any trade marks or registered 
+                                trade marks (including other logos) that appear on the website are the property of the AARC and/or third 
+                                parties. They cannot be copied, modified, reproduced, published, uploaded, distributed or posted in whole or in part 
+                                in any way without the prior written consent of AARC, and/or the relevant third party, except where specifically 
+                                allowed for elsewhere in these Terms.
+                            </p>
+                        
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Medical Disclaimer</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                Content on this website is provided for information purposes only.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                Information about a therapy, service, product or treatment does not in any way endorse or support such therapy, service, 
+                                product or treatment and is not intended to replace advice from your doctor or other registered health professional.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                The information and materials contained on this website are not intended to constitute a comprehensive guide concerning 
+                                all aspects of the therapy, product or treatment described on the website.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                All users are urged to always seek advice from a registered health care professional for diagnosis and answers to their 
+                                medical questions and to ascertain whether the particular therapy, service, product or treatment described on the 
+                                website is suitable in their circumstances.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                We shall not bear any liability for reliance by any user on the materials contained on this website.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                For more information all users of the website are directed to the disclaimer notice 
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Liability and loss - disclaimer</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                AARC does not accept responsibility for any loss or damage, however caused (including through 
+                                negligence), which you may directly or indirectly suffer in connection with your use of this or any linked 
+                                website, nor does it accept any responsibility for any such loss arising out of your use of or reliance on 
+                                information contained on or accessed through the website or any third party website that you access through 
+                                a link contained on the website.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                To the extent permitted by law, AARC excludes any liability to you for any of the following types of 
+                                loss or damage (which you may suffer as a result of your use of the website) whether the losses were foreseen, 
+                                foreseeable, unforeseen, unforeseeable, known, unknown or otherwise:                            
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                a. any loss which arose when you first accessed the website (even if that loss results from failure to comply 
+                                with these Terms or negligence on the part of AARC);
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                b. any loss due to the website not being available at any particular time;
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                c. any business loss you may suffer, including loss of revenue, loss of profits or loss of anticipated savings 
+                                (whether those losses are the direct or indirect result of default on the part of AARC);
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                d. any loss which you suffer other than as a result of AARC’s failure to comply with these Terms or its 
+                                negligence or breach of statutory duty;
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                e. any loss suffered due to the default of any party other than AARC;
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                f. any loss due to the non-availability or failure of any telecommunications or computer services, systems, 
+                                equipment or software operated or provided by you or any third party;
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                g. any loss or damage caused by any other event not reasonably within the control of AARC.
+                            </p>
+                        
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Printing From The Website</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You may download and print information from the website providing you retain all branding, design and 
+                                logos that appear on the relevant page and any copyright statements, credits, references to the website 
+                                and any other notices that appear on the relevant page. You can do this by using the ‘print’ button on the 
+                                web page.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                Even if you print material from the website as allowed under these Terms, you must not use or distribute 
+                                any material from the website for any public or commercial purpose without express written permission from 
+                                AARC. We reserve the right to grant or refuse permission, and to impose conditions on any permission 
+                                that is granted.
+                            </p>
+                        
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Amending or editing the website’s information</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                We may preserve the content of any feedback form, information request form, email or other electronic 
+                                message that we receive. Any personal information contained in that message will only be used or 
+                                disclosed in ways set out in this website privacy statement. We will not use that information to add 
+                                you to a mailing list without your consent.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You may not modify, adapt, amend, edit, and then reuse information available on the website without express 
+                                written permission from AARC. We reserve the right to grant or refuse permission and to impose 
+                                conditions on any permission that is granted.
+                            </p>
+                        
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Reproducing information from the website on the Internet</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You may not reproduce on the Internet any information or material available on the website unless the 
+                                reproduction is authorised:
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                a. under a Standard Licence Agreement or other legal arrangement issued by the AARC; or
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                b. in accordance with these Terms.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                The Internet includes websites, portals, feeds, email, blogs, social media, mobile devices and any other 
+                                Internet platforms (that exist now or in the future).
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                Without limiting the statement above, you may do any of the following without seeking permission, 
+                                providing you comply with these Terms:
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                a. Include a link on your website to the relevant page on the website, providing you comply with these Terms.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                b. Reproduce one or two direct quotes from a fact sheet (with quotation marks) and cite the website as your 
+                                reference. These can only be short, direct quotes and should follow normal referencing conventions.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                c. Write your own original content and use information on the website as a reference with the following 
+                                acknowledgement, “Reference: www.aarctherapy.com”, which must operate as a hyperlink to the website.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Reproducing the website’s information in other publications and formats</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You may reproduce information available on the website in publications and formats other than the Internet 
+                                only with express written permission from AARC. To obtain permission, you must request permission 
+                                in writing and provide specific details about how and where you will reproduce the material, and the 
+                                purpose of the proposed reproduction. AARC reserves the right to grant, withdraw or refuse permission, 
+                                and to impose conditions on any permission that is granted.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                If you are granted permission to reproduce information or material from the website in a publication or format 
+                                other than the Internet, you will be required to sign a Standard Licence Agreement outlining the specific terms 
+                                and conditions of the reproduction.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Links to other websites</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                Links to other websites are provided on the websites for the convenience of users. The inclusion of a link does 
+                                not imply endorsement of the content of the external site by the website. AARC takes no responsibility 
+                                for the accuracy, currency, reliability and correctness of any information contained on third party websites, or 
+                                whether the information contained on those websites is suitable for your needs. AARC takes no responsibility 
+                                and accepts no liability for the services provided by any third parties and/or their websites whose hyperlink or 
+                                trade name may appear on the website.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                AARC publishes links to other websites at its own discretion and reserves the right to revise or amend links 
+                                to other websites or withdraw links at any time without notice.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Links to the website</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You may insert a link to the website on your website, provided that you comply with these Terms and with the 
+                                following conditions:
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                a. The link cannot be used in any manner that may indicate endorsement, approval or sponsorship of your website, your 
+                                organisation or its services by the website, its content partners, AARC.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                b. If there are fees involved in the use of any part of your website, your website should contain a written notice 
+                                that the website is a free service.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                c. No charge of any sort can be attached to the availability of the website. For example, if you have a subscription 
+                                section on your site, the website link must not be placed inside this subscription area.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                d. The link to the website cannot be attached to any revenue generating mechanism.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                e. AARC reserves the right to request the removal of a link on your website to the our website at any time. Any 
+                                link to the website must be immediately removed upon request from the AARC.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                f. The words ‘AARC Therapy’ or the url www.aarctherapy.com must be part of the link text.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You must not reproduce the entire website environment and/or its contents or services within another website, for example 
+                                by using I-frame or screen scraping techniques.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Endorsements</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                Under no circumstances can you use any of the website content or material including any trade name, logo, URL or other 
+                                device that appears on the website, in any manner that may suggest any endorsement of your company, your website or your 
+                                products and services.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Personal and Private Information</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                The website is committed to ensuring that your personal information is protected. If you provide information to the website 
+                                by which your identity can reasonably be ascertained, it will only be used in accordance with the highest possible confidentiality.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                AARC will use the information you provide to the website to provide and operate the website, to fulfil administrative 
+                                functions associated with the website, and for internal research and reporting purposes. Where you provide personal information to 
+                                the website, you will be informed why the information is being collected and how it will be used, or those things will be obvious 
+                                at that time.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Data and System Integration</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                AARC does not represent or warrant that: 
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                a. the website or any content of the website will be available uninterrupted or error free; or
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                b. any defects in the website or any content of the website will be corrected; or
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                c. the website or its supporting systems are free of viruses, malware or other malicious content.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You acknowledge and agree that AARC will not be liable for any corruption or failed transmission of any information that 
+                                is attributable to your computer system or to the system of or any act or omission of your Internet Service Provider (ISP).
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You acknowledge and agree that you must take your own precautions to ensure that the process which you employ for accessing the 
+                                website does not expose you to the risk of viruses or other form of interference that may damage your own computer system.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                For the removal of doubt, AARC does not accept liability for any interference or damage to your computer system which 
+                                arises in connection with your accessing of the website or any linked website.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You will ensure that the information you provide to the website does not contain any viruses, trojan horses, worms, time bombs, 
+                                cancelbots or other computer programming routines that may damage, adversely interfere with, surreptitiously intercept or 
+                                expropriate any system or data.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                You agree that you will not use any device, software or routine to interfere or attempt to interfere with the proper working of 
+                                the website.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Governing Law</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                These Terms shall be governed by and construed in accordance with the laws of Pakistan. Any dispute arising under these Terms 
+                                shall be subject to the non-exclusive jurisdiction of the courts of Pakistan.
+                            </p>
+
+                            <h3 class="font-serif mb-8 text-2xl text-dark dark:text-white sm:text-[26px]" >Comments and Complaints</h3>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                If you have a complaint about any aspect of your use of the website, it is a requirement of these Terms that you notify the AARC 
+                                Pvt Ltd and await a response before taking any other action or raising the complaint with any external body. AARC will act 
+                                in good faith in investigating and responding to your complaint.
+                            </p>
+                            <p class="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6" >
+                                If any of these Terms are determined to be illegal, invalid or otherwise unenforceable, (“Ineffective”), it will be read down to 
+                                the extent necessary to ensure that it is not Ineffective. If the offending provision cannot be so read down, it will be severed. 
+                                In any event, the remainder of these Terms shall be interpreted to ensure that all other provisions remain in full force and 
+                                effect to the greatest extent possible.
+                            </p>
+
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </section>
+             <!-- ====== Privacy Policy Section End -->
+
+            </main>
+
+                 <!-- ====== Footer Section Start -->
+                 <footer class="relative bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20 px-5 md:px-10"
+                 >
+                   <div class="container mx-auto">
+                      <div class="flex flex-wrap -mx-4">
+                         <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+                            <div class="w-full mb-10">
+                               <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]" >
+                                 <img src="assets/img/aarc-logo-lg-rw.svg" alt="AARC Therapy Logo" class="max-w-full" />
+                               </a>
+                               <p class="text-base text-body-color mb-7">
+                                 AARC | Assessment, Advisory and Remedial Center
+                               </p>
+                               <p class="flex items-center text-sm font-medium" >
+                                  <!-- <span class="mr-3 text-[#4A90A3]">
+                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                        <g clip-path="url(#clip0_941_15626)">
+                                           <path d="M15.1875 19.4688C14.3438 19.4688 13.375 19.25 12.3125 18.8438C10.1875 18 7.84377 16.375 5.75002 14.2813C3.65627 12.1875 2.03127 9.84377 1.18752 7.68752C0.250019 5.37502 0.343769 3.46877 1.43752 2.40627C1.46877 2.37502 1.53127 2.34377 1.56252 2.31252L4.18752 0.750025C4.84377 0.375025 5.68752 0.562525 6.12502 1.18752L7.96877 3.93753C8.40627 4.59378 8.21877 5.46877 7.59377 5.90627L6.46877 6.68752C7.28127 8.00002 9.59377 11.2188 13.2813 13.5313L13.9688 12.5313C14.5 11.7813 15.3438 11.5625 16.0313 12.0313L18.7813 13.875C19.4063 14.3125 19.5938 15.1563 19.2188 15.8125L17.6563 18.4375C17.625 18.5 17.5938 18.5313 17.5625 18.5625C17 19.1563 16.1875 19.4688 15.1875 19.4688ZM2.37502 3.46878C1.78127 4.12503 1.81252 5.46877 2.50002 7.18752C3.28127 9.15627 4.78127 11.3125 6.75002 13.2813C8.68752 15.2188 10.875 16.7188 12.8125 17.5C14.5 18.1875 15.8438 18.2188 16.5313 17.625L18.0313 15.0625C18.0313 15.0313 18.0313 15.0313 18.0313 15L15.2813 13.1563C15.2813 13.1563 15.2188 13.1875 15.1563 13.2813L14.4688 14.2813C14.0313 14.9063 13.1875 15.0938 12.5625 14.6875C8.62502 12.25 6.18752 8.84377 5.31252 7.46877C4.90627 6.81252 5.06252 5.96878 5.68752 5.53128L6.81252 4.75002V4.71878L4.96877 1.96877C4.96877 1.93752 4.93752 1.93752 4.90627 1.96877L2.37502 3.46878Z" fill="currentColor" />
+                                           <path d="M18.3125 8.90633C17.9375 8.90633 17.6563 8.62508 17.625 8.25008C17.375 5.09383 14.7813 2.56258 11.5938 2.34383C11.2188 2.31258 10.9063 2.00008 10.9375 1.59383C10.9688 1.21883 11.2813 0.906333 11.6875 0.937583C15.5625 1.18758 18.7188 4.25008 19.0313 8.12508C19.0625 8.50008 18.7813 8.84383 18.375 8.87508C18.375 8.90633 18.3438 8.90633 18.3125 8.90633Z" fill="currentColor" />
+                                           <path d="M15.2187 9.18755C14.875 9.18755 14.5625 8.93755 14.5312 8.56255C14.3437 6.87505 13.0312 5.56255 11.3437 5.3438C10.9687 5.31255 10.6875 4.93755 10.7187 4.56255C10.75 4.18755 11.125 3.9063 11.5 3.93755C13.8437 4.2188 15.6562 6.0313 15.9375 8.37505C15.9687 8.75005 15.7187 9.0938 15.3125 9.1563C15.25 9.18755 15.2187 9.18755 15.2187 9.18755Z" fill="currentColor" />
+                                        </g>
+                                        <defs>
+                                           <clipPath id="clip0_941_15626">
+                                              <rect width="20" height="20" fill="white" />
+                                           </clipPath>
+                                        </defs>
+                                     </svg>
+                                  </span> -->
+                                  <!-- <span>+012 (345) 678 99</span> -->
+                               </p>
+                            </div>
+                         </div>
+                         <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+                            <div class="w-full mb-10">
+                               <h4 class="text-lg font-semibold mb-9">
+                                  Services
+                               </h4>
+                               <ul class="space-y-3">
+                                  <li>
+                                     <a href="index.html#seek-therapy" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                                       Therapy
+                                     </a>
+                                  </li>
+                                  <li>
+                                     <a href="index.html#workshops" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                                       Workshops
+                                     </a>
+                                  </li>
+                                  <li>
+                                     <a href="index.html#join-aarc" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                                       Join AARC
+                                     </a>
+                                  </li>
+                               </ul>
+                            </div>
+                         </div>
+                         <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+                            <div class="w-full mb-10">
+                               <h4 class="text-lg font-semibold mb-9">
+                                  Company
+                               </h4>
+                               <ul class="space-y-3">
+                                  <li>
+                                     <a href="index.html#about-aarc" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                                       About Us
+                                     </a>
+                                  </li>
+                                  <li>
+                                     <a href="index.html#our-team" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                                       Our Team
+                                     </a>
+                                  </li>
+                               </ul>
+                            </div>
+                         </div>
+                         <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+                            <div class="w-full mb-10">
+                               <h4 class="text-lg font-semibold mb-9">
+                                  Legal
+                               </h4>
+                               <ul class="space-y-3">
+                                 <li>
+                                   <a href="privacy-policy.html" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                                     Privacy Policy
+                                   </a>
+                                 </li>
+                                 <li>
+                                   <a href="terms-and-conditions.html" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                                     Terms & Conditions
+                                   </a>
+                                 </li>
+                               </ul>
+                            </div>
+                         </div>
+                         <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
+                            <div class="w-full mb-10">
+                               <h4 class="text-lg font-semibold mb-9">
+                                  Follow Us On
+                               </h4>
+                               <div class="flex items-center mb-6">
+                                 <a href="https://www.instagram.com/aarc.therapy/?igshid=MW9id2pxenl2cG85ZQ" class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full transition-all duration-500 hover:border-[#4A90A3] hover:bg-[#4A90A3] border-stroke hover:text-white sm:mr-4 lg:mr-3 xl:mr-4" >
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7.9a4.1 4.1 0 1 0 4.1 4.1A4.09 4.09 0 0 0 12 7.9Zm0 6.77A2.67 2.67 0 1 1 14.67 12A2.67 2.67 0 0 1 12 14.67Zm5.23-6.94a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm2.71 1a4.71 4.71 0 0 0-1.29-3.35a4.71 4.71 0 0 0-3.35-1.32C14 4 10 4 8.7 4.06a4.73 4.73 0 0 0-3.35 1.29A4.71 4.71 0 0 0 4.06 8.7C4 10 4 14 4.06 15.3a4.71 4.71 0 0 0 1.29 3.35a4.73 4.73 0 0 0 3.35 1.29c1.32.08 5.28.08 6.6 0a4.71 4.71 0 0 0 3.35-1.29a4.71 4.71 0 0 0 1.29-3.35c.06-1.3.06-5.3 0-6.6Zm-1.7 8a2.7 2.7 0 0 1-1.52 1.52a18 18 0 0 1-4.72.32a17.91 17.91 0 0 1-4.71-.32a2.7 2.7 0 0 1-1.52-1.52c-.42-1.06-.33-3.56-.33-4.72s-.09-3.67.33-4.72a2.65 2.65 0 0 1 1.52-1.53A17.91 17.91 0 0 1 12 5.44a18 18 0 0 1 4.72.32a2.7 2.7 0 0 1 1.52 1.52c.42 1.06.32 3.56.32 4.72s.1 3.67-.32 4.72Z"/></svg>                 
+                                 </a>
+                                 <!-- <a href="https://www.instagram.com/aarc.therapy/?igshid=MW9id2pxenl2cG85ZQ" class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full hover:border-[#4A90A3] hover:bg-[#4A90A3] border-stroke hover:text-white sm:mr-4 lg:mr-3 xl:mr-4" >
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="currentColor" d="M18.72 4H5.37A1.31 1.31 0 0 0 4 5.25v13.38A1.41 1.41 0 0 0 5.37 20h13.35A1.34 1.34 0 0 0 20 18.63V5.25A1.23 1.23 0 0 0 18.72 4ZM9 17.34H6.67v-7.13H9ZM7.89 9.13A1.18 1.18 0 0 1 6.67 7.9a1.18 1.18 0 0 1 1.24-1.23A1.18 1.18 0 0 1 9.13 7.9a1.18 1.18 0 0 1-1.24 1.23Zm9.45 8.21H15v-3.9c0-.93-.33-1.57-1.16-1.57a1.25 1.25 0 0 0-1.17.84a1.43 1.43 0 0 0-.08.57v4.06h-2.3v-7.13h2.3v1a2.32 2.32 0 0 1 2.1-1.21c1.51 0 2.65 1 2.65 3.13Z"/></svg>
+                                 </a> -->
+                               </div>
+                               <p class="text-base text-body-color">
+                                  &copy; 2025 AARC Therapy
+                               </p>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div>
+                      <span class="absolute left-0 bottom-0 z-[-1]">
+                         <svg width="217" height="229" viewBox="0 0 217 229" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z" fill="url(#paint0_linear_1179_5)" />
+                            <defs>
+                               <linearGradient id="paint0_linear_1179_5" x1="76.5" y1="281" x2="76.5" y2="1.22829e-05" gradientUnits="userSpaceOnUse" >
+                                  <stop stop-color="#3056D3" stop-opacity="0.08" />
+                                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                               </linearGradient>
+                            </defs>
+                         </svg>
+                      </span>
+                      <span class="absolute top-10 right-10 z-[-1]">
+                         <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <path d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z" fill="url(#paint0_linear_1179_4)" />
+                            <defs>
+                               <linearGradient id="paint0_linear_1179_4" x1="-1.63917e-06" y1="37.5" x2="75" y2="37.5" gradientUnits="userSpaceOnUse" >
+                                  <stop stop-color="#13C296" stop-opacity="0.31" />
+                                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                               </linearGradient>
+                            </defs>
+                         </svg>
+                      </span>
+                   </div>
+                 </footer>
+                 <!-- ====== Footer Section End -->
+                         <script defer type="text/javascript" src="/assets/js/script.nc.js"></script>
+    </body>
+</html>

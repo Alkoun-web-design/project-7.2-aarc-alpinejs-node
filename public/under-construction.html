@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="At AARC, we endeavour to facilitate a path to wellbeing 
+    from a holistic perspective, that would honour trust and confidentiality. Our carefully 
+    vetted team of professionals will initiate the therapeutic connection with sincerity and 
+    integrity, encouraging a dialogue that would establish rapport.">
+
+    <title>AARC | Assessment, Advisory and Remedial Center</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/aarc-logo-sm-rw.svg">
+    <link href="./assets/css/output.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="/assets/js/anime.min.js"></script>
+  <!-- </head>
+  <body class="font-outfit" x-data="{scrolledFromTop: false}" x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"> -->
+
+    <!-- #4A90A3 -->
+
+    <section class="flex justify-center min-h-[700px] px-5 pb-20 md:px-20 lg:px-40 w-screen " id="home">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 mx-auto">
+        <div x-data="{ isVisible: false }" x-intersect.half="isVisible = true" class="mx-auto my-auto justify-center">
+          <div x-show="isVisible" x-transition.duration.2000ms.delay.200ms >
+            <h1 class="font-serif text-5xl">AARC Therapy's website is currently under development.</h1>
+          </div>
+          <div x-show="isVisible" x-transition.duration.2000ms.delay.400ms class="text-xl pt-8">
+            <p class="text-gray-500">You can still contact us, and fill out the forms.</p>    
+          </div>
+          <div x-show="isVisible" x-transition.duration.2000ms.delay.1000ms class="flex flex-col mt-8">
+          </div>
+        </div>
+        <div x-data="{ isVisible: false }" x-intersect.half="isVisible = true" class="mx-auto my-auto content-center">
+
+           <!-- ====== Modal Section Start -->
+   <section x-data="{therapyModalOpen: false}" class="flex flex-row justify-center">
+    <div class="py-10">
+      <button x-show="isVisible" x-transition.duration.2000ms.delay.400ms @click="therapyModalOpen = true" class="block w-full px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90">
+        Need Counseling or Therapy?
+      </button>
+    </div>
+  
+    <!-- <div  x-show="therapyModalOpen" class="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-gray-5 py-10 dark:bg-dark">
+      <div  @click.outside="therapyModalOpen = false"  class="relative mx-auto h-screen w-full max-w-[770px] overflow-y-scroll rounded-xl bg-white p-10 shadow-xl dark:bg-dark-2">
+        <button  @click="therapyModalOpen = false"  class="p-2 text-dark-4 duration-200 hover:text-dark dark:hover:text-white">
+          <svg  width="22"  height="22"  viewBox="0 0 22 22"  fill="none"  xmlns="http://www.w3.org/2000/svg">
+            <path  d="M12.0998 11L20.4873 2.61249C20.7967 2.30311 20.7967 1.82186 20.4873 1.51249C20.1779 1.20311 19.6967 1.20311 19.3873 1.51249L10.9998 9.89999L2.6123 1.51249C2.30293 1.20311 1.82168 1.20311 1.5123 1.51249C1.20293 1.82186 1.20293 2.30311 1.5123 2.61249L9.8998 11L1.5123 19.3875C1.20293 19.6969 1.20293 20.1781 1.5123 20.4875C1.6498 20.625 1.85605 20.7281 2.0623 20.7281C2.26855 20.7281 2.4748 20.6594 2.6123 20.4875L10.9998 12.1L19.3873 20.4875C19.5248 20.625 19.7311 20.7281 19.9373 20.7281C20.1436 20.7281 20.3498 20.6594 20.4873 20.4875C20.7967 20.1781 20.7967 19.6969 20.4873 19.3875L12.0998 11Z"  fill="currentColor"/>
+          </svg>
+        </button> -->
+      <div  x-show="therapyModalOpen"  class="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-gray-5 py-10 dark:bg-dark">
+        <div  @click.outside="therapyModalOpen = false"  class="relative mx-auto h-screen w-full max-w-[770px] overflow-y-scroll rounded-xl bg-white p-10 shadow-xl dark:bg-dark-2">
+          <button  @click="therapyModalOpen = false"  class="p-2 text-dark-4 duration-200 hover:text-dark dark:hover:text-white">
+            <svg  width="22"  height="22"  viewBox="0 0 22 22"  fill="none"  xmlns="http://www.w3.org/2000/svg">
+              <path  d="M12.0998 11L20.4873 2.61249C20.7967 2.30311 20.7967 1.82186 20.4873 1.51249C20.1779 1.20311 19.6967 1.20311 19.3873 1.51249L10.9998 9.89999L2.6123 1.51249C2.30293 1.20311 1.82168 1.20311 1.5123 1.51249C1.20293 1.82186 1.20293 2.30311 1.5123 2.61249L9.8998 11L1.5123 19.3875C1.20293 19.6969 1.20293 20.1781 1.5123 20.4875C1.6498 20.625 1.85605 20.7281 2.0623 20.7281C2.26855 20.7281 2.4748 20.6594 2.6123 20.4875L10.9998 12.1L19.3873 20.4875C19.5248 20.625 19.7311 20.7281 19.9373 20.7281C20.1436 20.7281 20.3498 20.6594 20.4873 20.4875C20.7967 20.1781 20.7967 19.6969 20.4873 19.3875L12.0998 11Z"  fill="currentColor"/>
+            </svg>
+          </button>  
+          <div>
+        
+      <!-- ====== Therapy Form Start -->
+      <section class="relative z-20 overflow-hidden bg-white py-5 dark:bg-dark" >
+        <div class="container">
+          <div class="mb-16 text-center">
+            <h2 class="font-serif mb-3 text-4xl text-dark md:text-5xl dark:text-white">Seeking Therapy</h2>
+            <p class="text-lg text-body-color dark:text-dark-6">We’ll get back to you within 24 hours.</p>
+          </div>
+        
+          <form id="seek-therapy-form">
+          <div class="mx-auto w-full max-w-[540px]">
+            <div class="-mx-4 flex flex-wrap">
+              <div class="w-full px-4 sm:w-1/2">
+                <div class="mb-6">
+                  <label for="seek-therapy-first-name" class="mb-2.5 block text-base font-medium text-dark dark:text-white">First name</label>
+                  <input name="seek-therapy-first-name" id="seek-therapy-first-name" type="text" autocomplete="off" placeholder="First name" required class="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                </div>
+              </div>
+              <div class="w-full px-4 sm:w-1/2">
+                <div class="mb-6">
+                  <label for="seek-therapy-last-name" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Last name</label>
+                  <input name="seek-therapy-last-name" id="seek-therapy-last-name" type="text" autocomplete="off" placeholder="Last name" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                </div>
+              </div>
+
+              <div class="w-full px-4 sm:w-1/2">
+                <div class="mb-6">
+                  <label for="seek-therapy-age" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Age</label>
+                  <input name="seek-therapy-age" id="seek-therapy-age" autocomplete="off" type="number" autocomplete="off" min="18" max="99" placeholder="Age" required class="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                </div>
+              </div>
+              <div class="w-full px-4 sm:w-1/2">
+                <div class="mb-6">
+
+                </div>
+              </div>
+
+              <div class="w-full px-4 sm:w-1/2">
+                <div class="mb-6">
+                  <label for="seek-therapy-email" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Email</label>
+                  <input name="seek-therapy-email" id="seek-therapy-email" type="email" autocomplete="off" placeholder="yourname@company.com" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                </div>
+              </div>
+              <div class="w-full px-4 sm:w-1/2">
+                <div class="mb-6">
+                  <label for="seek-therapy-contact-number" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Phone number</label>
+                  <input name="seek-therapy-contact-number" id="seek-therapy-contact-number" type="tel" autocomplete="off" placeholder="+1 (555) 444-0000" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                </div>
+              </div>
+
+              <div class="w-full px-4">
+                <div class="mb-6">
+                  <label for="needs" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Would you like to tell us more about your needs?</label>
+                  <textarea name="needs" id="needs" type="text"  rows="6" autocomplete="off" placeholder="Type your message" required class="w-full rounded-lg border border-stroke bg-transparent p-5 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"></textarea>
+                </div>
+              </div>
+              <div class="w-full px-4">
+                <button id="seek-therapy-button" type="submit" class="block w-full px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90">
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+        </section>
+        <!-- ====== Therapy Form End -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====== Modal Section End -->
+
+
+     <!-- ====== Modal Section Start -->
+    <section x-data="{interestModalOpen: false}" class="flex flex-row justify-center">
+      <div class="">
+        <button x-show="isVisible" x-transition.duration.2000ms.delay.400ms @click="interestModalOpen = true" class="block w-full px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90">
+          Join AARC's Professional Community
+        </button>
+      </div>
+    
+      <div  x-show="interestModalOpen"  class="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-gray-5 py-10 dark:bg-dark">
+        <div @click.outside="interestModalOpen = false"  class="relative mx-auto h-screen w-full max-w-[770px] overflow-y-scroll rounded-xl bg-white p-10 shadow-xl dark:bg-dark-2">
+          <button @click="interestModalOpen = false"  class="p-2 text-dark-4 duration-200 hover:text-dark dark:hover:text-white">
+            <svg  width="22"  height="22"  viewBox="0 0 22 22"  fill="none"  xmlns="http://www.w3.org/2000/svg">
+              <path  d="M12.0998 11L20.4873 2.61249C20.7967 2.30311 20.7967 1.82186 20.4873 1.51249C20.1779 1.20311 19.6967 1.20311 19.3873 1.51249L10.9998 9.89999L2.6123 1.51249C2.30293 1.20311 1.82168 1.20311 1.5123 1.51249C1.20293 1.82186 1.20293 2.30311 1.5123 2.61249L9.8998 11L1.5123 19.3875C1.20293 19.6969 1.20293 20.1781 1.5123 20.4875C1.6498 20.625 1.85605 20.7281 2.0623 20.7281C2.26855 20.7281 2.4748 20.6594 2.6123 20.4875L10.9998 12.1L19.3873 20.4875C19.5248 20.625 19.7311 20.7281 19.9373 20.7281C20.1436 20.7281 20.3498 20.6594 20.4873 20.4875C20.7967 20.1781 20.7967 19.6969 20.4873 19.3875L12.0998 11Z"  fill="currentColor"/>
+            </svg>
+          </button>
+          <div>
+          
+            <!-- ====== Joining AARC Form Start -->
+          <section class="relative z-20 overflow-hidden bg-white py-5 dark:bg-dark" >
+          <div class="container">
+            <div class="mb-16 text-center">
+              <h2 class="font-serif mb-3 text-4xl text-dark md:text-5xl dark:text-white">Joining AARC</h2>
+              <p class="text-lg text-body-color dark:text-dark-6">We’ll get back to you within 24 hours.</p>
+            </div>
+          
+            <form id="interest-form" x-data="{ selectedOption: '', otherInputDisabled: true}">
+            <div class="mx-auto w-full max-w-[540px]">
+              <div class="-mx-4 flex flex-wrap">
+                <div class="w-full px-4 sm:w-1/2">
+                  <div class="mb-6">
+                    <label for="interest-first-name" class="mb-2.5 block text-base font-medium text-dark dark:text-white">First name</label>
+                    <input name="interest-first-name" id="interest-first-name" type="text" autocomplete="off" placeholder="First name" required class="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                  </div>
+                </div>
+                <div class="w-full px-4 sm:w-1/2">
+                  <div class="mb-6">
+                    <label for="interest-last-name" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Last name</label>
+                    <input name="interest-last-name" id="interest-last-name" type="text" autocomplete="off" placeholder="Last name" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                  </div>
+                </div>
+  
+                <div class="w-full px-4 sm:w-1/2">
+                  <div class="mb-6">
+                    <label for="interest-email" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Email</label>
+                    <input name="interest-email" id="interest-email" type="email" autocomplete="off" placeholder="yourname@company.com" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                  </div>
+                </div>
+                <div class="w-full px-4 sm:w-1/2">
+                  <div class="mb-6">
+                    <label for="interest-contact-number" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Phone number</label>
+                    <input name="interest-contact-number" id="interest-contact-number" type="tel" autocomplete="off" placeholder="+1 (555) 444-0000" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]"/>
+                  </div>
+                </div>
+  
+                <div class="w-full px-4">
+                  <div class="mb-6">
+                    <label for="interest-qualifications" class="mb-2.5 block text-base font-medium text-dark dark:text-white">What are your clinical qualifications?</label>
+                    <select x-model="selectedOption" name="interest-qualifications" id="interest-qualifications" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]">
+                      <option disabled selected>Please sekect your qualification</option>
+                      <option value="Master's in Counselling or Clinical Psychology" selected="selected">Master's in Counselling or Clinical Psychology</option>
+                      <option value="Certification or Diploma in Psychotherapy">Certification or Diploma in Psychotherapy</option>
+                      <option value="Other...">Other...</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="w-full px-4">
+                  <div class="mb-6">
+                    <label id="label-other-qualifications" for="interest-other-qualifications" class="mb-2.5 block text-base font-medium text-dark dark:text-white">Please specify the other qualifications</label>
+                    <input :disabled="selectedOption !== 'Other...'" :class="{ 'bg-gray-200 cursor-not-allowed': selectedOption !== 'Other...', 'bg-white cursor-text': selectedOption === 'Other...'}" name="interest-other-qualifications" autocomplete="off" placeholder="Please enter other qualifications" id="interest-other-qualifications" type="text" class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]">
+                  </div>
+                </div>
+
+                <div class="w-full px-4">
+                  <div class="mb-6">
+                    <label for="interest-interest" class="mb-2.5 block text-base font-medium text-dark dark:text-white">What are you interested in?</label>
+                    <select name="interest-interest" id="interest-interest" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3] dark:border-dark-3 dark:text-white dark:focus:border-[#4A90A3]">
+                      <option value="Visiting the space" selected="selected">Visiting the space</option>
+                      <option value="Renting a Therapy Room">Renting a Therapy Room</option>
+                      <option value="Renting the Group Room">Renting the Group Room</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="w-full px-4">
+                  <button id="join-us-button" type="submit" class="block w-full px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90">
+                    Send
+                  </button>
+                </div>
+              </div>
+            </div>
+            </form>
+          </div>
+          </section>
+          <!-- ====== Joining AARC Form End -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Modal Section End -->
+
+      </div>
+    </div>
+  </section>
+
+
+                  <!-- ====== Contact Section Start -->
+                  <section id="contact-us" class="sm:min-h-[1455px] md:min-h-[1305px] lg:min-h-[1430px] bg-[#4A90A3] bg-px-5 px-5 md:px-20 lg:px-40 xl:px-80">
+                    <div x-data="{ isVisible: false }" x-intersect.half="isVisible = true" class="bg-tg-bg dark:bg-dark-2 py-20 lg:py-[120px]">
+                       <div x-show="isVisible" x-transition.duration:2000ms.delay:200ms class="container mx-auto">
+                          <div class="flex flex-wrap -mx-4">
+                             <div class="w-full px-4">
+                                <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
+                                    <span class="block mb-2 text-lg font-semibold text-white">Contact Us</span>
+                                   <h2 class="font-serif mb-4 text-3xl text-white dark:text-white sm:text-4xl md:text-[40px]" >Get in Touch With Us</h2>
+                                </div>
+                             </div>
+                             <div class="container mx-auto">
+                             <div class="bg-[#4A90A3] dark:bg-dark pt-4 pb-10 lg:pb-10">
+                                <div class="container mx-auto">
+                                   <div class="flex flex-wrap mx-auto">
+                                      <div class="w-full px-4 mx-auto md:w-1/3">
+                                        <div class="mb-10 text-center">
+                                           <div class="mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-tg-bg dark:bg-white/5 text-white sm:h-[130px] sm:w-[130px]" >
+                                            <svg width="43" height="42" viewBox="0 0 43 42" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                              <path d="M37.25 6.30005H5.75001C3.51876 6.30005 1.61563 8.13755 1.61563 10.4344V31.6969C1.61563 33.9282 3.45313 35.8313 5.75001 35.8313H37.25C39.4813 35.8313 41.3844 33.9938 41.3844 31.6969V10.3688C41.3844 8.13755 39.4813 6.30005 37.25 6.30005ZM37.25 9.25317C37.3156 9.25317 37.3813 9.25317 37.4469 9.25317L21.5 19.4907L5.55313 9.25317C5.61876 9.25317 5.68438 9.25317 5.75001 9.25317H37.25ZM37.25 32.7469H5.75001C5.09376 32.7469 4.56876 32.2219 4.56876 31.5657V12.1407L19.925 21.9844C20.3844 22.3125 20.9094 22.4438 21.4344 22.4438C21.9594 22.4438 22.4844 22.3125 22.9438 21.9844L38.3 12.1407V31.6313C38.4313 32.2875 37.9063 32.7469 37.25 32.7469Z" fill="currentColor" />
+                                            </svg>
+                                           </div>
+                                           <div class="text-center">
+                                              <h4 class="mb-3 text-lg font-semibold text-white dark:text-white" >Email Address</h4>
+                                              <p class="text-base text-white dark:text-dark-6">info@aarctherapy.com</p>
+                                           </div>
+                                        </div>
+                                     </div>
+                                   </div>
+                                </div>
+                             </div>
+                            </div>
+                          </div>
+                          <div>
+                             <form id="contact-us-form">
+                                <div class="flex flex-wrap justify-center -mx-4">
+                                   <div class="w-full px-4 md:w-1/2">
+                                      <div class="mb-7 lg:mb-9">
+                                         <label for="contact-us-first-name" class="block mb-3 text-base font-medium text-white dark:text-white md:mb-5" >
+                                            <span>Your First Name</span> <span class="text-red-500">*</span>
+                                         </label>
+                                         <input required id="contact-us-first-name" autocomplete="off" type="text" class="w-full rounded border border-stroke dark:border-dark-3 dark:bg-dark dark:text-dark-6 bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]" />
+                                      </div>
+                                   </div>
+                                   <div class="w-full px-4 md:w-1/2">
+                                      <div class="mb-7 lg:mb-9">
+                                         <label for="contact-us-last-name" class="block mb-3 text-base font-medium text-white dark:text-white md:mb-5" >
+                                            <span>Your Last Name</span>
+                                            <span class="text-red-500">*</span>
+                                         </label>
+                                         <input required id="contact-us-last-name" autocomplete="off" type="text" class="w-full rounded border border-stroke dark:border-dark-3 dark:bg-dark dark:text-dark-6 bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]" />
+                                      </div>
+                                   </div>
+                                   <div class="w-full px-4 md:w-1/2">
+                                    <div class="mb-7 lg:mb-9">
+                                       <label for="contact-us-email" class="block mb-3 text-base font-medium text-white dark:text-white md:mb-5" >
+                                          <span>Your Email</span>
+                                          <span class="text-red-500">*</span>
+                                       </label>
+                                       <input required id="contact-us-email" type="email" autocomplete="off" class="w-full rounded border border-stroke dark:border-dark-3 dark:bg-dark dark:text-dark-6 bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]" />
+                                    </div>
+                                 </div>
+                                 <div class="w-full px-4 md:w-1/2">
+                                    <div class="mb-7 lg:mb-9">
+                                       <label class="block mb-3 text-base font-medium text-white dark:text-white md:mb-5" >
+                                          <span>Your Contact Number</span>
+                                          <span class="text-red-500">*</span>
+                                       </label>
+                                       <input required id="contact-us-contact-number" type="tel" autocomplete="off" class="w-full rounded border border-stroke dark:border-dark-3 dark:bg-dark dark:text-dark-6 bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]" />
+                                    </div>
+                                 </div>
+                                   <div class="w-full px-4">
+                                      <div class="mb-7 lg:mb-9">
+                                         <label for="contact-us-message" class="block mb-3 text-base font-medium text-white dark:text-white md:mb-5" >
+                                            <span>Your Message</span>
+                                            <span class="text-red-500">*</span>
+                                         </label>
+                                         <textarea required id="contact-us-message" autocomplete="off" rows="10" class="w-full resize-none rounded border border-stroke dark:border-dark-3 dark:bg-dark dark:text-dark-6 bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]" ></textarea>
+                                      </div>
+                                   </div>
+                                   <div class="w-full px-4 sm:w-8/12 lg:w-4/12">
+                                      <div class="text-center">
+                                         <button id="contact-us-button" type="submit" class="block w-full border-white border-2 px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90" >
+                                            Send Message
+                                         </button>
+                                      </div>
+                                   </div>
+                                </div>
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                 </section>
+                 <!-- ====== Contact Section End -->
+
+
+        <script src="/assets/js/script.nc.js"></script>
+    </body>
+</html>
+
+
+

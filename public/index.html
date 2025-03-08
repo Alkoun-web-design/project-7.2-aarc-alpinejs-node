@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="At AARC, we endeavour to facilitate a path to wellbeing 
+    from a holistic perspective, that would honour trust and confidentiality. Our carefully 
+    vetted team of professionals will initiate the therapeutic connection with sincerity and 
+    integrity, encouraging a dialogue that would establish rapport.">
+
+    <title>AARC | Assessment, Advisory and Remedial Center</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/aarc-logo-sm-rw.svg">
+    <link href="./assets/css/output.css" rel="stylesheet">
+    <!-- <link href="./assets/css/tailwind.css" rel="stylesheet"> -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <!-- <body class="font-outfit overflow-hidden" x-data="{scrolledFromTop: false}" x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"> -->
+  <body class="font-outfit" x-data="{scrolledFromTop: false}" x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false">
+
+    <dialog id="seek-therapy-dialog">
+      <div class="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-gray-5 py-10">
+        <div class="relative mx-auto h-screen w-full max-w-[770px] overflow-y-scroll rounded-xl bg-white p-10 shadow-xl">
+          <button onclick="document.getElementById('seek-therapy-dialog').close()" class="p-2 duration-200">
+            <svg  width="22"  height="22"  viewBox="0 0 22 22"  fill="none"  xmlns="http://www.w3.org/2000/svg">
+              <path  d="M12.0998 11L20.4873 2.61249C20.7967 2.30311 20.7967 1.82186 20.4873 1.51249C20.1779 1.20311 19.6967 1.20311 19.3873 1.51249L10.9998 9.89999L2.6123 1.51249C2.30293 1.20311 1.82168 1.20311 1.5123 1.51249C1.20293 1.82186 1.20293 2.30311 1.5123 2.61249L9.8998 11L1.5123 19.3875C1.20293 19.6969 1.20293 20.1781 1.5123 20.4875C1.6498 20.625 1.85605 20.7281 2.0623 20.7281C2.26855 20.7281 2.4748 20.6594 2.6123 20.4875L10.9998 12.1L19.3873 20.4875C19.5248 20.625 19.7311 20.7281 19.9373 20.7281C20.1436 20.7281 20.3498 20.6594 20.4873 20.4875C20.7967 20.1781 20.7967 19.6969 20.4873 19.3875L12.0998 11Z"  fill="currentColor"/>
+            </svg>
+          </button>  
+          <div>
+        
+            <!-- ====== Therapy Form Start -->
+            <section class="relative z-20 overflow-hidden bg-white py-5" >
+              <div class="container">
+                <div class="mb-16 text-center">
+                  <h2 class="font-serif mb-3 text-4xl text-dark md:text-5xl">Seeking Therapy</h2>
+                  <p class="text-lg text-body-color">We’ll get back to you within 24 hours.</p>
+                </div>
+              
+                <form id="seek-therapy-form">
+                <div class="mx-auto w-full max-w-[540px]">
+                  <div class="-mx-4 flex flex-wrap">
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="seek-therapy-first-name" class="mb-2.5 block text-base font-medium text-dark">First name</label>
+                        <input name="seek-therapy-first-name" id="seek-therapy-first-name" type="text" autocomplete="off" placeholder="First name" required class="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="seek-therapy-last-name" class="mb-2.5 block text-base font-medium text-dark">Last name</label>
+                        <input name="seek-therapy-last-name" id="seek-therapy-last-name" type="text" autocomplete="off" placeholder="Last name" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+      
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="seek-therapy-age" class="mb-2.5 block text-base font-medium text-dark">Age</label>
+                        <input name="seek-therapy-age" id="seek-therapy-age" type="number" autocomplete="off" min="18" max="99" placeholder="Age" required class="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+      
+                      </div>
+                    </div>
+      
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="seek-therapy-email" class="mb-2.5 block text-base font-medium text-dark">Email</label>
+                        <input name="seek-therapy-email" id="seek-therapy-email" type="email" autocomplete="off" placeholder="yourname@company.com" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="seek-therapy-contact-number" class="mb-2.5 block text-base font-medium text-dark">Phone number</label>
+                        <input name="seek-therapy-contact-number" id="seek-therapy-contact-number" type="tel" autocomplete="off" placeholder="+1 (555) 444-0000" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+      
+                    <div class="w-full px-4">
+                      <div class="mb-6">
+                        <label for="needs" class="mb-2.5 block text-base font-medium text-dark">Would you like to tell us more about your needs?</label>
+                        <textarea name="needs" id="needs" rows="6" autocomplete="off" placeholder="Type your message" required class="w-full rounded-lg border border-stroke bg-transparent p-5 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]"></textarea>
+                      </div>
+                    </div>
+                    <div class="flex justify-center w-full px-4">
+                      <button id="seek-therapy-button" type="submit" class="block w-full px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90">
+                        Send
+                        <img id="seek-therapy-send-icon" src="./assets/img/send.svg" class="pl-2 h-5 !inline" alt="send icon">
+                      </button>
+                      <img id="seek-therapy-loading-icon" src="./assets/img/loading.svg" class="text-white hidden pl-2 h-5" alt="loading icon">
+                      <div id="seek-therapy-success" class="fixed z-30 bottom-0 py-5 px-16 w-auto hidden justify-center align-center !bg-green-300">
+                        <p class="text-white">Your form has been sent.</p>
+                      </div>
+                      <div id="seek-therapy-failure" class="fixed z-30 bottom-0 py-5 px-16 w-auto hidden justify-center align-center !bg-red-300">
+                        <p class="text-white">Your form could not be sent, please try again.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </form>
+              </div>
+            </section>
+            <!-- ====== Therapy Form End -->
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="join-aarc-dialog">
+      <div class="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-gray-5 py-10">
+        <div class="relative mx-auto h-screen w-full max-w-[770px] overflow-y-scroll rounded-xl bg-white p-10 shadow-xl">
+          <button onclick="document.getElementById('join-aarc-dialog').close()" class="p-2 duration-200">
+            <svg width="22"  height="22"  viewBox="0 0 22 22"  fill="none"  xmlns="http://www.w3.org/2000/svg">
+              <path  d="M12.0998 11L20.4873 2.61249C20.7967 2.30311 20.7967 1.82186 20.4873 1.51249C20.1779 1.20311 19.6967 1.20311 19.3873 1.51249L10.9998 9.89999L2.6123 1.51249C2.30293 1.20311 1.82168 1.20311 1.5123 1.51249C1.20293 1.82186 1.20293 2.30311 1.5123 2.61249L9.8998 11L1.5123 19.3875C1.20293 19.6969 1.20293 20.1781 1.5123 20.4875C1.6498 20.625 1.85605 20.7281 2.0623 20.7281C2.26855 20.7281 2.4748 20.6594 2.6123 20.4875L10.9998 12.1L19.3873 20.4875C19.5248 20.625 19.7311 20.7281 19.9373 20.7281C20.1436 20.7281 20.3498 20.6594 20.4873 20.4875C20.7967 20.1781 20.7967 19.6969 20.4873 19.3875L12.0998 11Z"  fill="currentColor"/>
+            </svg>
+          </button>
+          <div>
+          
+            <!-- ====== Joining AARC Form Start -->
+            <section class="relative z-20 overflow-hidden bg-white py-5" >
+              <div class="container">
+                <div class="mb-16 text-center">
+                  <h2 class="font-serif mb-3 text-4xl text-dark md:text-5xl">Joining AARC</h2>
+                  <p class="text-lg text-body-color">We’ll get back to you within 24 hours.</p>
+                </div>
+              
+                <form id="interest-form" x-data="{ selectedOption: '', otherInputDisabled: true}">
+                <div class="mx-auto w-full max-w-[540px]">
+                  <div class="-mx-4 flex flex-wrap">
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="interest-first-name" class="mb-2.5 block text-base font-medium text-dark">First name</label>
+                        <input name="interest-first-name" id="interest-first-name" type="text" autocomplete="off" placeholder="First name" required class="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="interest-last-name" class="mb-2.5 block text-base font-medium text-dark">Last name</label>
+                        <input name="interest-last-name" id="interest-last-name" type="text" autocomplete="off" placeholder="Last name" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+      
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="interest-email" class="mb-2.5 block text-base font-medium text-dark">Email</label>
+                        <input name="interest-email" id="interest-email" type="email" autocomplete="off" placeholder="yourname@company.com" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2">
+                      <div class="mb-6">
+                        <label for="interest-contact-number" class="mb-2.5 block text-base font-medium text-dark">Phone number</label>
+                        <input name="interest-contact-number" id="interest-contact-number" type="tel" autocomplete="off" placeholder="+1 (555) 444-0000" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+      
+                    <div class="w-full px-4">
+                      <div class="mb-6">
+                        <label for="interest-qualifications" class="mb-2.5 block text-base font-medium text-dark">What are your clinical qualifications?</label>
+                        <select x-model="selectedOption" name="interest-qualifications" id="interest-qualifications" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                          <option disabled selected>Please sekect your qualification</option>
+                          <option value="Master's in Counselling or Clinical Psychology" selected="selected">Master's in Counselling or Clinical Psychology</option>
+                          <option value="Certification or Diploma in Psychotherapy">Certification or Diploma in Psychotherapy</option>
+                          <option value="Other...">Other...</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="w-full px-4">
+                      <div class="mb-6">
+                        <label id="label-other-qualifications" for="interest-other-qualifications" class="mb-2.5 block text-base font-medium text-dark">Please specify the other qualifications</label>
+                        <input :disabled="selectedOption !== 'Other...'" :class="{ 'bg-gray-200 cursor-not-allowed': selectedOption !== 'Other...', 'bg-white cursor-text': selectedOption === 'Other...'}" name="interest-other-qualifications" autocomplete="off" placeholder="Please enter other qualifications" id="interest-other-qualifications" type="text" class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                      </div>
+                    </div>
+    
+                    <div class="w-full px-4">
+                      <div class="mb-6">
+                        <label for="interest-interest" class="mb-2.5 block text-base font-medium text-dark">What are you interested in?</label>
+                        <select name="interest-interest" id="interest-interest" required class="h-[46px] w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-dark placeholder-dark-5 outline-none duration-200 focus:border-[#4A90A3]">
+                          <option value="Visiting the space" selected="selected">Visiting the space</option>
+                          <option value="Renting a Therapy Room">Renting a Therapy Room</option>
+                          <option value="Renting the Group Room">Renting the Group Room</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="flex justify-center w-full px-4">
+                      <button id="join-us-button" type="submit" class="block w-full px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90">
+                        Send
+                        <img id="interest-send-icon" src="./assets/img/send.svg" class="pl-2 h-5 !inline" alt="send icon">
+                      </button>
+                      <img id="interest-loading-icon" src="./assets/img/loading.svg" class="text-white hidden pl-2 h-5" alt="loading icon">
+                      <div id="join-aarc-success" class="fixed z-30 bottom-0 py-5 px-16 w-auto hidden justify-center align-center !bg-green-300">
+                        <p class="text-white">Your form has been sent.</p>
+                      </div>
+                      <div id="join-aarc-failure" class="fixed z-30 bottom-0 py-5 px-16 w-auto hidden justify-center align-center !bg-red-300">
+                        <p class="text-white">Your form could not be sent, please try again.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </form>
+              </div>
+            </section>
+          <!-- ====== Joining AARC Form End -->
+          </div>
+        </div>
+      </div>
+    </dialog>
+    <!-- #4A90A3 -->
+
+    <!-- ====== Navbar Section Start -->
+
+    <header x-data=" { navbarOpen: false, submenuOpen: false } " class="bg-white flex items-center w-full" >
+      <div class="container mx-auto xl:mx-10">
+        <div class="relative flex items-center justify-between -mx-4">
+          <div class="max-w-full px-4 w-60">
+            <a href="index.html" class="block w-full">
+              <img src="assets/img/aarc-logo-lg-rw.svg" alt="AARC Therapy Logo" class="w-20">
+            </a>
+          </div>
+          <div class="flex items-center justify-end w-full px-4">
+            <div>
+              <button @click="navbarOpen = !navbarOpen" :class="navbarOpen && 'navbarTogglerActive' " id="navbarToggler" class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-[#4A90A3] focus:ring-2 lg:hidden" >
+                <span class="bg-[#4A90A3] relative my-[6px] block h-[2px] w-[30px]" ></span>
+                <span class="bg-[#4A90A3] relative my-[6px] block h-[2px] w-[30px]" ></span>
+                <span class="bg-[#4A90A3] relative my-[6px] block h-[2px] w-[30px]" ></span>
+              </button>
+              <nav :class="!navbarOpen && 'hidden' " id="navbarCollapse" class="absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 shadow lg:static lg:block lg:w-full lg:max-w-full lg:py-0 lg:px-6 lg:shadow-none lg:bg-transparent" >
+                <ul class="block lg:flex">
+                  <li class="group relative">
+                    <a href="#home" class="flex border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out px-6 text-base font-medium text-[#4A90A3] lg:ml-8 lg:inline-flex py-2 lg:px-0">Home</a>
+                  </li>
+                  <li class="group submenu-item relative lg:ml-8">
+                     <a href="javascript:void(0)" @click="submenuOpen = !submenuOpen" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out relative flex px-6 text-base font-medium text-[#4A90A3] after:absolute after:right-5 after:top-1/2 after:mt-[-2px] after:h-2 after:w-2 after:translate-y-[-50%] after:rotate-45 after:border-b-2 after:border-r-2 after:border-current lg:inline-flex py-2 lg:pl-0 lg:pr-4 lg:after:right-0">About Us</a>
+                     <div :class="!submenuOpen ? 'hidden lg:block' : 'block' " class="relative top-full left-0 rounded-lg bg-white px-4 transition-all group-hover:opacity-100 lg:invisible lg:absolute lg:top-[115%] lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full" >
+                       <a href="#about-aarc" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out block rounded py-[10px] px-4 text-sm font-medium text-[#4A90A3] hover:bg-[#4A90A3] hover:text-white">Why Choose Us?</a>
+                       <a href="#our-team" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out block rounded py-[10px] px-4 text-sm font-medium text-[#4A90A3] hover:bg-[#4A90A3] hover:text-white">Our Team</a>
+                       <a href="privacy-policy.html" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out block rounded py-[10px] px-4 text-sm font-medium text-[#4A90A3] hover:bg-[#4A90A3] hover:text-white">Privacy Policy</a>
+                       <a href="terms-and-conditions.html" class="border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-outhover:bg-[#4A90A3] block rounded py-[10px] px-4 text-sm font-medium text-[#4A90A3] hover:bg-[#4A90A3] hover:text-white">Terms & Conditions</a>
+                     </div>
+                  </li>
+                  <!-- <li class="group relative">
+                    <a href="#seek-therapy" class="flex px-6 text-base font-medium text-[#4A90A3] border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out lg:ml-8 lg:inline-flex py-2 lg:px-0">Seek Therapy</a>
+                  </li> -->
+                  <li class="group relative">
+                    <a href="#workshops" class="flex px-6 text-base font-medium text-[#4A90A3] border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out lg:ml-8 lg:inline-flex py-2 lg:px-0">Workshops</a>
+                  </li>
+                  <li class="group relative">
+                    <a href="#join-aarc" class="flex px-6 text-base font-medium text-[#4A90A3] border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out lg:ml-8 lg:inline-flex py-2 lg:px-0">Join AARC</a>
+                  </li>
+                  <li class="group relative">
+                    <a href="#contact-us" class="flex px-6 text-base font-medium text-[#4A90A3] border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out lg:ml-8 lg:inline-flex py-2 lg:px-0">Contact Us</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====== Navbar Section End -->
+
+    <section class="flex justify-center px-5 pb-20 md:px-20 lg:px-40 w-screen " id="home">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-12 mx-auto">
+        <div x-data="{ isVisible: false }" x-intersect.half="isVisible = true" class="mx-auto my-auto justify-center">
+          <div class="text-xl pb-4" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-200': true }">
+            <p>Fostering mental well-being</p>    
+          </div>
+          <div :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-200': true }">
+            <h1 class="font-serif text-5xl">Where Therapists & Clients,<br>Meet & Grow.</h1>
+          </div>
+            <div class="text-xl pt-6" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-200': true }">
+            <p class="text-gray-500 text-sm">AARC Therapy provides a co-working space<br>for therpaists and their clients</p>    
+          </div>
+          <div class="flex flex-col mt-8" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-400': true }">
+            <div class="mb-4">
+              <button onclick="document.getElementById('seek-therapy-dialog').showModal()" class="ease-out duration-300 border-[#4A90A3] hover:bg-[#4A90A3] text-[#4A90A3] hover:text-white border w-fit rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font disabled:bg-gray-3 disabled:border-gray-3 active:bg-blue-light-3">
+                <!-- <svg class="inline-block fill-current mr-2" height="24" width="24" viewBox="0 0 24 24" fill="none"><g><path d="m12.052 14.829l1.414 1.414L17.71 12l-4.243-4.243l-1.414 1.415L13.88 11H6.343v2h7.537l-1.828 1.829Z"/><path fill-rule="evenodd" d="M19.778 19.778c4.296-4.296 4.296-11.26 0-15.556c-4.296-4.296-11.26-4.296-15.556 0c-4.296 4.296-4.296 11.26 0 15.556c4.296 4.296 11.26 4.296 15.556 0Zm-1.414-1.414A9 9 0 1 0 5.636 5.636a9 9 0 0 0 12.728 12.728Z" clip-rule="evenodd"/></g></svg> -->
+                Need Counseling or Therapy?
+              </button>
+            </div>
+            
+            <div class="mb-4">
+              <button onclick="document.getElementById('join-aarc-dialog').showModal()" class="ease-out duration-300 border-[#4A90A3] hover:bg-[#4A90A3] text-[#4A90A3] hover:text-white border w-fit rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font disabled:bg-gray-3 disabled:border-gray-3 active:bg-blue-light-3">
+                <!-- <svg class="inline-block fill-current mr-2" height="24" width="24" viewBox="0 0 24 24" fill="none"><g><path d="m12.052 14.829l1.414 1.414L17.71 12l-4.243-4.243l-1.414 1.415L13.88 11H6.343v2h7.537l-1.828 1.829Z"/><path fill-rule="evenodd" d="M19.778 19.778c4.296-4.296 4.296-11.26 0-15.556c-4.296-4.296-11.26-4.296-15.556 0c-4.296 4.296-4.296 11.26 0 15.556c4.296 4.296 11.26 4.296 15.556 0Zm-1.414-1.414A9 9 0 1 0 5.636 5.636a9 9 0 0 0 12.728 12.728Z" clip-rule="evenodd"/></g></svg> -->
+                Join AARC's Professional Community
+              </button>
+            </div>
+            
+            <a href="#workshops" class="mb-4 ease-out duration-300 border-[#4A90A3] hover:bg-[#4A90A3] text-[#4A90A3] hover:text-white border w-fit rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font disabled:bg-gray-3 disabled:border-gray-3 active:bg-blue-light-3" >
+              <!-- <span class="ml-1 pr-4"> -->
+                 <!-- <svg class="fill-current" height="24" width="24" viewBox="0 0 24 24" fill="none"><g><path d="m12.052 14.829l1.414 1.414L17.71 12l-4.243-4.243l-1.414 1.415L13.88 11H6.343v2h7.537l-1.828 1.829Z"/><path fill-rule="evenodd" d="M19.778 19.778c4.296-4.296 4.296-11.26 0-15.556c-4.296-4.296-11.26-4.296-15.556 0c-4.296 4.296-4.296 11.26 0 15.556c4.296 4.296 11.26 4.296 15.556 0Zm-1.414-1.414A9 9 0 1 0 5.636 5.636a9 9 0 0 0 12.728 12.728Z" clip-rule="evenodd"/></g></svg> -->
+              <!-- </span> -->
+                Read about AARC's Workshops 
+            </a>
+
+          </div>
+        </div>
+        <div x-data="{ isVisible: false }" x-intersect.half="isVisible = true" class="mx-auto my-auto content-center hidden md:block">
+          <img src="./assets/img/image_5_-removebg.svg" class="w-[800px]" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-400': true }" alt="hero image">
+        </div>
+      </div>
+    </section>
+
+
+
+            <!-- ====== About Section Start  bg-[#4A90A3]-->
+            <section id="about-aarc" class="px-4 lg:px-20 overflow-hidden bg-[#4A90A3] text-white pb-20 pt-20 lg:pb-[90px] lg:pt-[120px]">
+              <div x-data="{ isVisible: false }" x-intersect="isVisible = true">  
+                <div class="container mx-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+                  <div class="-mx-4 mb-16 flex flex-wrap">
+                    <div class="w-full px-4 lg:w-8/12">
+                      <div class="overflow-hidden rounded-[20px]">
+                        <img src="/assets/img/about-aarc.jpeg"  alt="about image"  class="w-full object-cover object-center">
+                      </div>
+                    </div>
+                    <div class="w-full px-4 lg:w-4/12">
+                      <div class="overflow-hidden rounded-[20px]">
+                        <video autoplay loop muted playsinline width="250" class="w-full object-cover object-center">
+                          <source src="/assets/vid/aarc-about.mp4" type="video/webm">                       
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <div x-data="{ isVisible: false }" x-intersect.half="isVisible = true">
+                  <div class="mb-11 w-full max-w-[970px]" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+                    <span class="mb-2 block text-lg font-semibold uppercase text-[#4A90A3]">OUR MISSION</span>
+                    <h2 class="font-serif mb-3 text-4xl !leading-[1.2] tracking-[-1.2px] sm:text-5xl md:text-[60px] ">Why Choose Us?</h2>
+                    <p class="text-lg font-medium">We endeavor to facilitate a path to wellbeing from a holistic perspective, that would 
+                      honor trust and confidentiality.</p>
+                  </div>
+              
+                  <div class="grid gap-8 md:grid-cols-2 lg:gap-[70px]" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+                    <div>
+                      <p class="text-base text-white">
+                        Our carefully vetted team of professionals will initiate the 
+                        therapeutic connection with sincerity and integrity, encouraging a dialogue that would establish 
+                        rapport. One of our key goals is to increase your emotional and ego strength to resolve conflicts, 
+                        validate your emotions and learn to structure a cognitive scaffolding to exit from cognitive thinking traps.
+                      </p>
+                    </div>
+                
+                    <div>
+                      <p class="text-base text-white">
+                        Your self-esteem and your individual profile would be our map to facilitate emotional well-being and 
+                        psychoeducation, to cope with conflicts beyond the therapy sessions. It is important to note that we 
+                        have the expertise, the experience, the education, and credentials, to provide the degree of individualised 
+                        attention that would facilitate change.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- ====== About Section End -->
+
+
+
+<!-- ====== Services Section Start -->
+    <section id="seek-therapy" class="pb-4 pt-20 px-4 lg:px-10 lg:pt-[120px]">
+      <div class="container" >
+        <div x-data="{ isVisible: false }" x-intersect.half="isVisible = true" class="-mx-4 flex flex-wrap" >
+          <div class="w-full px-4" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+            <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-[90px]">
+              <span class="mb-2 block text-lg font-semibold text-[#4A90A3]">Core Features</span>
+              <h2 class="font-serif mb-3 text-3xl leading-[1.2] sm:text-4xl md:text-[40px]">
+                We Offer Therapy, Workshops & Rooms
+              </h2>
+              <p class="text-base text-body-color"></p>
+            </div>
+          </div>
+        </div>
+        <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="-mx-4 flex flex-wrap">
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-200': true }">
+            <div class="mb-8">
+              <div class="mb-5 rounded-[22px] bg-[#4A90A3] p-5">                  
+                <div class="flex items-center justify-center rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.41)45.89%,rgba(255,255,255,0.00)100%)] pb-10 pt-5">
+                  <img src="assets/img/Psychologist-rafiki(1).svg" class="h-80" loading="lazy" alt="Individual Therapy">
+                </div>
+              </div>
+              <div class="">
+                <h3 class="text-center font-serif mb-4 text-2xl">
+                  Individual therapy & counselling
+                </h3>
+                <p class="mb-6 text-body-color">
+                  For children, adolescents, and adults (In person and online)
+                </p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[400ms]': true }">
+            <div class="mb-8">
+              <div class="mb-5 rounded-[22px] bg-[#4A90A3] p-5">  
+                <div class="flex items-center justify-center rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.41)45.89%,rgba(255,255,255,0.00)100%)] pb-10 pt-5">
+                  <img src="assets/img/Group therapy-rafiki(1).svg" class="h-80" loading="lazy" alt="Group Therapy">
+                </div>
+              </div>
+              <div class="">
+                <h3 class="text-center font-serif mb-4 text-2xl">
+                  Group Therapy
+                </h3>
+                <p class="mb-6 text-body-color">
+                  Group therapy sessions provide a safe medium whereby, 
+                  in a confidential environment, clients can validate their emotional conflicts and can learn 
+                  from each other coping mechanisms with empathy and social intelligence. Eventually, support 
+                  groups may emerge for the more extended period ahead. It is therapeutic in itself.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[600ms]': true }">
+            <div class="mb-8">
+              <!-- <div class="mb-5 rounded-[22px] bg-gradient-to-t from-[#F7E8F3] to-[#DDDCF8] p-5"> -->
+              <div class="mb-5 rounded-[22px] bg-[#4A90A3] p-5">  
+                <div class="flex items-center justify-center rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.41)45.89%,rgba(255,255,255,0.00)100%)] pb-10 pt-5">
+                  <img src="assets/img/Appreciation-rafiki(1).svg" class="h-80" loading="lazy" alt="Relationship & Marriage Therapy">
+                </div>
+              </div>
+              <div class="">
+                <h3 class="text-center font-serif mb-4 text-2xl">
+                  Relationship & Marriage Therapy
+                </h3>
+                <p class="mb-6 text-body-color">
+                  Couple therapy can help you and your partner improve your relationship 
+                  if you are having communication and mis communication issues. Relationship difficulties can be resolved 
+                  by helping you and your partner identify feelings generated by the discord and identify the thoughts and 
+                  learn the skills to diffuse emotionally loaded thoughts, understanding each other’s perspectives and 
+                  allowing them to see one another with empathy and compassion.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[800ms]': true }">
+            <div class="mb-8">
+              <div class="mb-5 rounded-[22px] bg-[#4A90A3] p-5">  
+                <div class="flex items-center justify-center rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.41)45.89%,rgba(255,255,255,0.00)100%)] pb-10 pt-5">
+                  <img src="assets/img/Classroom-rafiki(1).svg" class="h-80" loading="lazy" alt="Therapy Workshop">
+                </div>
+              </div>
+              <div class="">
+                <h3 class="text-center font-serif mb-4 text-2xl">
+                  Workshops
+                </h3>
+                <!-- <p class="font-serif mb-6 text-body-color"> -->
+                    <ol class="font-serif mb-6 text-body-color">
+                        <li>Schools (Teachers, management, students, and parents)</li>
+                        <li>Corporate (Time management, leadership development etc.)</li>
+                    </ol>
+                <!-- </p> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1000ms]': true }">
+            <div class="mb-8">
+              <div class="mb-5 rounded-[22px] bg-[#4A90A3] p-5">  
+                <div class="flex items-center justify-center rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.41)45.89%,rgba(255,255,255,0.00)100%)] pb-10 pt-5">
+                    <img src="assets/img/Report-rafiki(1).svg" class="h-80" loading="lazy" alt="Therapy Assessment">
+                </div>
+              </div>
+              <div class="">
+                <h3 class="text-center font-serif mb-4 text-2xl">
+                  Clinical Assessments
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1200ms]': true }">
+            <div class="mb-8">
+              <div class="mb-5 rounded-[22px] bg-[#4A90A3] p-5">  
+                <div class="flex items-center justify-center rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.41)45.89%,rgba(255,255,255,0.00)100%)] pb-10 pt-5">
+                  <img src="assets/img/Mental health-rafiki(1).svg" class="h-80" loading="lazy" alt="Life skills">
+                </div>
+              </div>
+              <div class="">
+                <h3 class="text-center font-serif mb-4 text-2xl">
+                  Life Skills
+                </h3>
+                <p class="mb-6 text-body-color">
+                  Our approach to personal development and growth-focused life skills primarily integrates 
+                  evidence-based methodologies, such as Cognitive Behavioral Therapy (CBT), along with other 
+                  promising approaches, including psychodynamic, humanistic, systemic, and somatic therapies. 
+                  These frameworks are designed to enhance critical thinking, emotional intelligence, and social 
+                  intelligence while fostering essential competencies such as decision-making, stress management, 
+                  planning and organization, conflict resolution, negotiation, and leadership. By equipping 
+                  individuals with these skills, we empower them to navigate personal and professional 
+                  challenges with confidence and resilience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <button onclick="document.getElementById('seek-therapy-dialog').showModal()" class="w-auto px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90">
+          Seek Therapy
+        </button>
+      </div>  
+    </section>
+  <!-- ====== Services Section End -->
+
+
+  <!-- ====== Brands Section Start -->
+  <section class="my-24 lg:py-[20px] ">
+    <div x-data="{ isVisible: false }" x-intersect.half="isVisible = true" class="container mx-auto">
+      <!-- <div x-show="isVisible" x-transition.duration.2000ms class="flex flex-wrap justify-center"> -->
+      <div class="flex flex-wrap justify-center" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+        <h2 class="font-serif mb-10 text-3xl leading-[1.2] sm:text-4xl md:text-[40px]">
+          Collaborations
+        </h2>
+        <div class="w-full px-4">
+          <div class="flex flex-wrap items-center justify-center">
+            <a href="https://therapeuticommunity.pk" class="mx-4 flex w-auto items-center justify-center py-5">
+              <img src="assets/img/ttc-logo.webp" alt="TTC Logo" class="rounded-full max-h-40 max-w-40 hover:shadow-lg transition-all hover:-translate-y-4 duration-500 !important">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====== Brands Section End -->
+
+
+  <!-- ====== Team Section Start -->
+  <section id="our-team" class="pt-20 pb-10 px-5 xl:px-10 lg:pt-[120px]">
+    <div class="container mx-auto">
+      <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+          <div class="mx-auto mb-[60px] max-w-[510px] text-center">
+            <span class="text-[#4A90A3] mb-2 block text-lg font-semibold">
+              Our Team
+            </span>
+            <h2 class="font-serif mb-3 text-3xl leading-[1.2] sm:text-4xl md:text-[40px]">
+               Meet Our Team
+            </h2>
+            <p class="text-body-color text-base">
+                Every member of the team at <span class="font-serif">AARC</span> has a highly 
+                specialised skill set, coming together in order to empower our clients to reduce unnecessary pain, improve 
+                quality of life and regain independence.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="-mx-4 flex flex-wrap justify-center perspective">
+        
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[400ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/hajra-raza-pro-2.webp" alt="Hajra Raza" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Hajra Raza
+                  </h3>
+                  <h3 class="font-serif text-base mb-1">
+                    Founder, AARC Therapy
+                  </h3>
+                  <p class="text-white text-xs mb-1">MSc. Psychology (University of Surrey, UK),
+                    Postgraduate Diploma in Psychological Interventions (CBT),
+                    Level 3 Certification in Humanistic Counselling, CPCAB, UK,</p>
+                  <p class="text-white text-xs mb-1">Individual and Couple Therapist</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">I’m Hajra Raza, a Counselling Psychologist practicing since 2022. My journey into psychology started 
+                with a deep curiosity about why we feel and behave the way we do. Originally studying media, I shifted paths to better 
+                understand human emotions, trauma, and healing. My research on PTSD focused on why trauma memories linger even when 
+                the original stressors are long gone and how our brains are naturally wired to hold onto negative experiences. </p>
+              <p class="my-4">This passion led me to found AARC—a space where people can feel safe to explore difficult emotions, 
+                process trauma, and build healthier ways of coping. Whether working with individuals or couples, my approach is 
+                warm, structured, and tailored to each client’s needs. In couples therapy, I draw from the Structural and Gottman 
+                methods to help partners strengthen their bond and find shared meaning in their conflicts.</p>
+              <p class="my-4">
+                At the heart of my work is the belief that healing happens in safe, supportive relationships. At AARC, we’re here
+                 to walk that journey with you.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[400ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/daheem-din.webp" alt="Daheem Din" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Daheem Din
+                  </h3>
+                  <p class="text-white text-xs mb-1">Master of Arts in Counselling (California State University, Long Beach, US), and an accredited Clinical Supervisor, CPCAB, UK.</p>
+                  <p class="text-white text-xs mb-1">Marriage and Family Therapist</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">I’m Daheem Din, a Marriage and Family Therapist, (CSULB, USA) and an accredited Clinical Supervisor, CPCAB, UK.</p>
+              <p class="my-4">Practicing since 2006, my practice has spanned across the U.S., Australia, UAE and Pakistan, offering me a diverse
+                 perspective on the challenges faced by individuals, couples, and families. In my practice I focus on helping clients
+                  navigate psychological and emotional difficulties within a systemic framework.</p> 
+              <p class="my-4">Other than being a practitioner I’m a Teacher, an accerdited Clinical supervisor, a Group therapy facilitator
+                 and an Organizational trainer.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[600ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/sabrina-nangiana-2.webp" alt="Sabrina Nangiana" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Sabrina Nangiana
+                  </h3>
+                  <p class="text-white text-xs mb-1">Integrative Psychotherapist, Clinical Supervisor & Support Group Facilitator</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">I am Sabrina Nangiana, an integrative psychotherapist and a Clinical supervisor. With over 
+                ten years of experience I am compassionate about providing mental health support keeping the socio 
+                cultural aspect in consideration while working with an individual.</p> 
+              <p class="my-4">In addition to my practise I have extensive experience in teaching and running process groups 
+                using rational approaches which facilitates collective growth. My role as a school Counselor has further 
+                enriched my practise giving me a keen understanding how socio cultural aspects impact personality development. 
+                I have been working in corporate sector giving trainings and also training tutors. My work across different 
+                sectors has deepened my understanding of how socio-cultural factors impact well-being, allowing me to help
+                 others build resilience and navigate life’s challenges.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[800ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/saadia-zahra-1.webp" alt="Saadia Zahra" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Saadia Zahra
+                  </h3>
+                  <p class="text-white text-xs mb-1">Integrative Psychotherapist, Accredited Counselling Supervisor and NLP Practitioner</p>
+                  <p class="text-white text-xs mb-1">Counselling Supervisor, Diploma in Counselling Supervision (TM6D/I), CPCAB (UK)</p>
+                  <p class="text-white text-xs mb-1">Tutor, Level 3 Certificate in Counselling Studies (CST-L3), CPCAB (UK)</p>
+                  <p class="text-white text-xs mb-1">NLP Practitioner</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">
+                Certications: 
+                Certified NLP Practitioner Master Coach, ABNLP (USA), Certified Hypnotherapist, Successful Minds Institute (Australia), 
+                Timeline Therapist, Time Line Therapy®️ Association (TLTA)
+              </p> 
+                <p class="my-4">I am passionate about helping individuals unlock their full potential by transforming negative 
+                  thinking patterns, releasing limiting beliefs, and resolving internal conflicts. With a strong foundation in 
+                  integrative psychotherapy, hypnotherapy, and NLP, I guide my clients through deep subconscious work to create 
+                  lasting change.
+                </p>
+                <p class="my-4">My approach is rooted in the belief that true transformation comes from within. By tapping into the 
+                unconscious mind, I help individuals break free from self-imposed barriers, clarify their core values, and design 
+                effective motivation strategies. Whether working one-on-one or in group settings, I provide a safe and supportive 
+                space where clients can explore their inner selves and align their actions with their goals.
+              </p>
+              <p class="my-4">Fluent in both English and Urdu, I work with individuals aged 18 to 55, offering a blend of mindfulness
+                -based approaches and future pacing techniques to ensure long-term success. My mission is to empower my clients to 
+                take charge of their lives with clarity, confidence, and purpose.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1000ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/hassam-mahmood-2.webp" alt="Hassam Mahmood" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Hassam Mahmood, MBACP
+                  </h3>
+                  <p class="text-white text-xs mb-1">
+                    MSc. Counselling and Psychotherapy (School of Medicine, Keele University, UK),</p>
+                    <p class="text-white text-xs mb-1"> 
+                      PGCert CBT, (University of Oxford),</p>
+                    <p class="text-white text-xs mb-1">
+                      Paediatric BTTI Graduate (International OCD Foundation),</p>
+                    <p class="text-white text-xs mb-1"> 
+                      T.E.A.M CBT Level 2 (Feeling Good Institute, USA)</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">Hassam Mahmood is a psychotherapist registered with the BACP. He holds an MSc. in Counselling and 
+                Psychotherapy with a distinction from the School of Medicine at Keele University, UK. He specialises in CBT, 
+                holding a PGCert in CBT from the University of Oxford and a T.E.A.M CBT Level 2 Certification from the Feeling 
+                Good Institute, USA. He has a special interest in working with OCD, having completed the internationally recognised 
+                BTTI training in ERP(Exposure and Response Prevention) on a scholarship under clinical supervision from Dr. Gregory 
+                Chasson. His clinical supervisor at Oxford was the OCD expert Dr. Victoria Bream, author of “CBT for OCD”. His 
+                approach towards CBT is based on a foundation of a strong humanistic therapeutic alliance and highly individualised 
+                therapy.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1200ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/farah-tiwana-2-1.webp" alt="Farah Tiwana" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Farah Tiwana
+                  </h3>
+                  <p class="text-white text-xs mb-1">
+                    MSc. Mental Health Studies (IoPPN, KCL), Beck Institute (USA) Certifications in CBT for Depression, Anxiety, Exposure Techniques, and Trauma, Level 3 Certificate in Counselling (CPCAB, UK)</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">I am a Clinical Psychologist practicing since 2014, with experience in hospital settings, universities, 
+                and private practice. While I have worked with a range of mental health concerns over the years, I specialize in 
+                anxiety disorders and clinical PTSD. My approach integrates Cognitive Behavioural Therapy (CBT) and Psychodynamic 
+                Counselling. In practical terms, I collaborate with clients to explore what brings them to therapy, how their thoughts, 
+                beliefs, feelings, and behaviors have developed, and how they can move forward. Together, we work to process the 
+                emotions and beliefs underlying their difficulties. I primarily work with individuals aged 21 to 40 of all genders 
+                but do not work with couples, families, children, or neurodevelopmental concerns. My areas of expertise include 
+                anxiety (excluding OCD), PTSD, childhood emotional trauma or neglect, and emotional regulation. However, I am not 
+                currently working with actively suicidal clients, those in acute crises, or individuals with complex emotional 
+                needs/complex trauma.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1400ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/sadia-khan-niazi.webp" alt="Saadia Khan Niazi" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                      Saadia Khan Niazi
+                  </h3>
+                  <p class="text-white text-xs mb-1">MS/M.phil. Clinical and counseling psychology, Bsc.Hon (Applied psychology), Child Accelerated Trauma
+                      Treatment (UK)</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">I am a clinical and counseling psychologist working since 2010. I aim to help people overcome any 
+                issues pertaining to mental health. My training is in cognitive behavioral therapy, Rational emotive behavioral therapy, 
+                client-centered therapy and gestalt therapy. However, I follow integrative therapy, which is a multi-modal therapy approach 
+                which focuses on the need of the individual seeking treatment. I also have expertise in conducting psychological assessments 
+                which can help find the basic causes of an individual’s symptoms and provides a basis of developing a treatment plan that is 
+                designed to their needs. Moreover, I am certified in children’s accelerated Trauma Treatment (CATT), which is a cutting-edge 
+                technique for treatment of PTSD (Post traumatic stress disorder). This technique is also suitable for adults who have 
+                experienced distress or traumatic experiences. It is a cognitive therapeutic approach which also includes art/play methods 
+                which suit people of all ages.</p> 
+            <p class="my-4">My focus of therapy is to help an individual overcome their symptoms to improve daily functioning 
+                and have enhanced emotional well-being and healing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1600ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/aleena-rasheed-1.webp" alt="Alina Rasheed" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Alina Rashid
+                  </h3>
+                  <p class="text-white text-xs mb-1">MS Clinical Psychology (Kinnaird College For Women), Truma Informed Therapist, Corporate Trainer</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">Certifications: 
+                Psychological First Aid (Johns Hopkins University, Baltimore, Maryland)
+                Trauma Informed and Somatic Therapy (Trauma Release and Wellness Center)
+                Neuro-Linguistic Programming (American Union of NLP) 
+                Eriksonian Hypnotherapy (American Alliance of Hypnotists)                
+              </p> 
+              <p class="my-4">
+                As a trauma-informed clinical psychologist with 9 years of clinical experience, I specialize in providing 
+                compassionate and integrative therapeutic support that manoeuvers the mind-body connection. Rooted in 
+                Trauma-Informed Therapy, Psychological First Aid, Neuro-Linguistic Programming (NLP), Ericksonian Hypnosis, 
+                and Cognitive-Behavioral modalities, my approach is designed to meet each client where they are, creating 
+                a personalized healing experience.</p>
+              <p class="my-4">With a deep understanding of how trauma impacts the nervous system and one’s way of 
+                experiencing the world around them, I guide clients through regulation-based mind-body work, nurturing 
+                resilience, emotional balance, and self-empowerment. My therapeutic presence is grounded in safety, 
+                non-judgment, and attunement, ensuring that individuals feel seen, heard, and supported on their 
+                healing journey.
+              </p>
+              <p class="my-4">In addition to therapy, I provide corporate wellness training as a mental strength
+                 consultant, helping organizations cultivate psychologically supportive workplaces. I also teach 
+                 psychology to undergraduate students, conduct professional development programs for students, 
+                 and offer psychometric assessments for children (Autism and ADHD) and adults (diagnostic).
+              </p>
+              <p class="my-2">Through continuous learning and professional growth, I remain dedicated to providing
+                 healing opportunities that empower individuals to reclaim their well-being and thrive</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1800ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/iqra-sadiq-goraya-2.webp" alt="Iqra Sadiq Goraya" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Iqra Sadiq Goraya
+                  </h3>
+                  <p class="text-white text-xs mb-1">MS in Clinical and Counselling Psychology from Beaconhouse National University</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">Iqra Sadiq Goraya is a dedicated Clinical and Counselling Psychologist with extensive experience
+                 in psychological assessment, therapeutic interventions and mental health care. She holds an MS in Clinical and
+                  Counselling Psychology from Beaconhouse National University, where she was recognized on the Dean’s Honor List
+                   for academic excellence. </p>
+              <p class="my-4">She has contributed to academia through research, conferences, and publications, including 
+                presenting at the FCCU 1st International Psychology Conference and publishing in Miller’s Dream, a Student 
+                Philosophy Journal. Her research on marital expectations and relationship quality reflects her deep understanding
+                 of interpersonal dynamics and emotional well-being.</p> 
+              <p class="my-4">At AARC Therapy, Iqra specializes in treating anxiety, depression, trauma, and relationship challenges
+                 using evidence-based interventions. She has worked with leading mental health institutions, including Connections, 
+                 Ijaz Clinic, and the Punjab Institute of Mental Health, gaining expertise in person-centered therapy, crisis 
+                 intervention, and emotional support.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+ <!-- ====== Team Section End -->
+
+
+ <!-- ====== External Team Section Start -->
+ <section id="external-team" class="pt-20 pb-10 px-5 xl:px-10">
+  <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="container mx-auto">
+    <div class="-mx-4 flex flex-wrap" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-[60px] max-w-[510px] text-center">
+          <h2 class="font-serif mb-3 text-3xl leading-[1.2] sm:text-4xl md:text-[40px]">
+             AARC's External Team
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="-mx-4 flex flex-wrap justify-center perspective">
+
+      <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[200ms]': true }">
+        <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+          <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+            <img src="assets/img/meral-ali-1.webp" alt="Meeral Ali" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+            <div class="absolute bottom-5 left-0 w-full text-center">
+              <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                <h3 class="font-serif text-base mb-1">
+                  Meeral Ali
+                </h3>
+                <p class="text-white text-xs mb-1">Master of Arts in Marriage and Family Therapy (Syracuse University, USA)</p>
+                <p class="text-white text-xs mb-1">Individual and Couple Therapist</p>              
+              </div>
+            </div>
+          </div>
+          <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+            <p class="mb-4 mt-2">I am Meeral Ali, a trauma-informed counselor with a strong foundation in systemic work. With three years of
+              clinical experience in upstate New York, I have worked with a diverse range of clients, including couples, older adults (60+), 
+              children (ages 3+), individuals, and families navigating post-traumatic stress, self-esteem challenges, and personal growth.</p>
+             <p class="my-4">Fluent in both English and Urdu, I take an integrative approach to therapy, drawing from Person-Centered Therapy, 
+               Emotionally Focused Therapy, and Narrative Therapy.</p>
+             <p class="my-4">
+               At the heart of my work is a deep commitment to fostering a warm, authentic, inclusive, and non-judgmental space where clients
+                can safely explore their inner worlds at their own pace. I believe in a collaborative, non-directive style, ensuring that my
+                 clients remain in the driver’s seat while I facilitate and support them through their journeys. 
+             </p>
+             <p class="my-4">
+             Passionate about relational dynamics and personal transformation, I help clients untangle the impact of past traumas on their 
+             present experiences. I hold a firm belief in people’s inherent resilience and capacity for growth, walking alongside them on 
+             their journey toward healing, self-discovery, and meaningful change.</p>
+         </div>
+        </div>
+      </div>
+
+      <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[400ms]': true }">
+        <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+          <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+            <img src="assets/img/jahanara-ara-chughtai-1.webp" alt="Jahan Ara Chughtai" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+            <div class="absolute bottom-5 left-0 w-full text-center">
+              <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                <h3 class="font-serif text-base mb-1">
+                  Jahan Ara Chughtai
+                </h3>
+                <p class="text-white text-xs mb-1">MS Mental Health Counselling</p>
+                <p class="text-white text-xs mb-1">Domestic Violence Counsellor</p>
+                <p class="text-white text-xs mb-1">EMDR therapist</p>            
+              </div>
+            </div>
+          </div>
+          <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+            <p class="mb-4 mt-2">I work with individuals for 1-1 therapy. My work takes inspiration from ISTDP, systems work, psychodynamic 
+              and relational work alongside EMDR. I use a strength-based approach for trauma work.</p>
+              <p class="my-4">I believe in the power of the therapeutic bond and that people change and heal when they accept all parts of themselves.</p>
+              <p class="my-4">Having experience in counselling DV survivors at a shelter in the US during my studies, I am particularly passionate about this demographic. I work with adults 18 upwards. 
+                I also hold mental health workshops in DV counseling & trauma informed work for therapists, students and staff. 
+              </p>
+         </div>
+        </div>
+      </div>
+
+      <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[600ms]': true }">
+        <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+          <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+            <img src="assets/img/sabine-zeshan-qureshi-1.webp" alt="Sabeen Zeshan Qureshi" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+            <div class="absolute bottom-5 left-0 w-full text-center">
+              <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                <h3 class="font-serif text-base mb-1">
+                  Sabeen Zeshan Qureshi
+                </h3>
+                <p class="text-white text-xs mb-1">Integrative Psychotherapist</p>
+                <p class="text-white text-xs mb-1">Individual & Couple Therapist</p>
+              </div>
+            </div>
+          </div>
+          <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+            <p class="mb-4 mt-2">Therapy is a space where you can bring your whole self—your struggles, uncertainties, and hopes. My role is to 
+              provide a warm, accepting environment where you can explore your thoughts and emotions with curiosity and compassion. Together, 
+              we will make sense of past experiences, understand recurring patterns, and find ways to move forward with greater clarity and ease.
+            </p>
+            <p class="my-4">
+              Drawing from integrative psychotherapy, Internal Family Systems (IFS), and trauma-informed care, I tailor each session to your 
+              unique needs. Whether it’s processing difficult emotions, navigating relationships, or managing life’s transitions, we will 
+              work at a pace that feels right for you. My hope is that through this process, you’ll feel more grounded, self-aware, and 
+              equipped to make choices that align with who you are.</p>
+            <p class="my-4">If you’re ready to begin this journey, I’m here to support you.</p>
+            <p class="my-4">
+              Certifications/Diplomas:
+              Level-3 Certificate in Counselling Studies, Counselling Psychology – CPCAB, UK
+              Level-4 Diploma in Therapeutic Counselling, Psychoanalysis, and Psychotherapy – CPCAB, UK
+              Level-5 Diploma in Psychotherapeutic Counselling, Psychoanalysis, and Psychotherapy – CPCAB, UK(Ongoing)
+              IFS (Internal Family Systems) Intensive Therapy Training
+              CCTS-I (Certified Clinical Trauma Specialist-Individual), Arizona Trauma Institute, USA
+              Journey to Transcendence (Transpersonal Psychology)
+              Couples training course – MS therapy -2024</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- ====== External Team Section End -->
+
+ <!-- ====== Intake Team Section Start -->
+<section id="intake-offcers" class="pt-20 pb-10 px-5 xl:px-10">
+  <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="container mx-auto">
+    <div class="-mx-4 flex flex-wrap" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-[60px] max-w-[510px] text-center">
+          <h2 class="font-serif mb-3 text-3xl leading-[1.2] sm:text-4xl md:text-[40px]">
+             Our Intake Officers
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- <div x-data="{ isVisible: false }" x-intersect.full="isVisible = true" class="-mx-4 flex flex-wrap justify-center perspective"> -->
+      <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="-mx-4 flex flex-wrap justify-center perspective">
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-200': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/zeest-mehtab-1.webp" alt="Zeest Mehtab" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Zeest Mehtab
+                  </h3>
+                  <p class="text-white text-xs mb-1">BA psychology Istanbul Bilgi University</p>
+                  <p class="text-white text-xs mb-1">MSW Stony Brook University</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">My passion for helping others was ignited during my university days while participating in a life-changing 
+                mission with a trauma relief organization in disaster-stricken areas worldwide. This experience solidified my commitment to the
+                 field of mental health. With a Bachelor's degree in Psychology from Turkey and currently pursuing a Master's in Social Work at
+                  Stony Brook University, I have also completed certificate programs in Trauma Studies and Family and Relationship Studies. My 
+                  professional journey includes over a year of experience as an intake officer at Maryam Suheyl Therapy and AARC Therapy,
+                   where I have honed my skills in assessing and addressing diverse mental health needs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-400': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/anushe-khan-1.webp" alt="Anushe Khan" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Anushe Khan
+                  </h3>
+                  <p class="text-white text-xs mb-1">MS in Applied Psychology (Northeastern University) (ongoing)</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">I’m Anushé, Assistant Psychologist at AARC Therapy. I conduct intake calls, helping clients 
+                articulate their concerns and guiding them toward the right professional for them. I also assist in developing 
+                workshops designed for psychology students at AARC. I earned my undergraduate degree in Political Science and 
+                Psychology from LUMS, where my studies deepened my understanding of human behavior, social systems, and the
+                 intersection of psychology with policy and community development. 
+              </p>
+              <p class="my-4">Currently, I’m pursuing an MS in Applied Psychology at Northeastern University, specializing in
+                 Child, Adolescent & Family Psychology. My work is driven by a strong interest in attachment, relational 
+                 dynamics, and the impact of cultural contexts on mental health. Whether through research, psycho-education,
+                  or direct client engagement, I hope to create educated spaces where individuals feel supported.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<!-- ====== Intake Team Section End -->
+
+
+ <!-- ====== Coaching Team Section Start -->
+  <section id="intake-offcers" class="pt-20 pb-10 px-5 xl:px-10">
+    <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="container mx-auto">
+      <div class="-mx-4 flex flex-wrap" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-[60px] max-w-[510px] text-center">
+            <h2 class="font-serif mb-3 text-3xl leading-[1.2] sm:text-4xl md:text-[40px]">
+               Coaching
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="-mx-4 flex flex-wrap justify-center perspective">
+
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[600ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/hira-khan.webp" alt="Hira Khan" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Hira Khan
+                  </h3>
+                  <p class="text-white text-xs mb-1">Transformational Coach | Leadership | Youth Development | Career | Life & Wellness Coaching</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">Feeling stuck can be overwhelming—you want change, but you’re not sure where to start. Whether you’re a 
+                young adult navigating career and academic choices, a professional seeking more meaning, or a woman trying to rediscover 
+                herself after years of putting others first, I help you move forward with clarity and confidence.
+              </p>
+              <p class="my-4">
+                I know what it’s like to stand at a crossroads, unsure of the next step. That’s why my coaching is all about solutions—practical
+                , real, and tailored to you. We won’t just talk about your goals; we’ll create a plan that feels achievable and aligned with 
+                who you are. Whether it’s building self-confidence, making career decisions, or overcoming limiting beliefs, I’ll guide you
+                 toward actionable steps that lead to real change.</p>
+              <p class="my-4">Authenticity is at the heart of my approach. I believe transformation happens when we stop forcing ourselves into
+                 roles that don’t fit and start embracing our true selves. My own journey—including my experience with Pilates—has taught me 
+                 how deeply our minds and bodies are connected. When we work on both, we create lasting shifts that help us feel more grounded,
+                  capable, and empowered.</p>
+              <p class="my-4">If you’re ready for change and take control of your next chapter but don’t know where to start, I’m here to help
+                 you take that first step - and the next, and the next - until you’re exactly where you want to be.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+<!-- ====== Coaching Team Section End -->
+
+                    
+<!-- ====== Rooms Section Start -->
+<section id="join-aarc" class="px-4 lg:px-20 overflow-hidden pt-20 lg:pt-[120px]">
+  <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="container mx-auto">
+    <div class="flex flex-wrap justify-center" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+
+      <div>
+        <div class="mb-11 w-full max-w-[970px]">
+          <span  class="mb-2 block text-lg font-semibold uppercase text-[#4A90A3]">Join Our Professional Community</span>
+          <h2 class="font-serif mb-3 text-4xl !leading-[1.2] tracking-[-1.2px] sm:text-5xl md:text-[60px]">A co-working space for Mental Health Professionals</h2>
+        </div>
+    
+        <div class="grid gap-8 md:grid-cols-2 lg:gap-[70px]">
+          <div>
+            <p class="text-base text-body-color">
+              At AARC, We also offer spaces to qualified psychologists, counsellors, therapists, psychotherapists, 
+              life coaches, and other complementary health and wellness experts, especially those who need a private 
+              conference room to discuss with and assist their clients. Our modern facility offers a combination of 
+              permanent and hot desks, as well as access to four private conference rooms in different sizes, each 
+              room includes space for all kinds of therapy, a client waiting area, a small event area, a shared kitchen, 
+              and other necessary office amenities like high-speed wi-fi, filing cabinets and office stationery.
+            </p>
+          </div>
+      
+          <div>
+            <p class="text-base text-body-color">
+              Significantly, AARC is a self-service environment with limited administrative and in-person support. To 
+              meet the needs of our members, we rely on technology and effective systems and procedures. Professional 
+              Therapists will also have the facility of flexible working hours, so they can choose the time that best suits 
+              their productivity. They can enjoy more flexibility in booking times, if the rooms are booked in advance, 
+              charges can vary depending on the booking hours and timings. All these facilities in comfortable, secure and 
+              well designed rooms. For booking or for more information, please get in touch with us using the form below if 
+              you are a professional seeking a place to practice. We will get back to you shortly.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div x-data=" { slides: ['1','2','3','4','5'], activeSlide: 1, activeButton: 'w-[30px] bg-[#4A90A3]', button: 'w-[10px] bg-[#E4E4E4]' } " x-show="isVisible" x-transition.duration.2000ms class="flex items-center justify-center">
+      <button class="shadow-input rounded-md hover:bg-[#4A90A3] left-[35%] top-full flex h-10 w-10 items-center justify-center bg-white transition-all hover:text-white md:-left-12 md:top-1/2 lg:-left-16" @click="$refs.carousel.scrollLeft = $refs.carousel.scrollLeft - ($refs.carousel.scrollWidth / slides.length); activeSlide -= 1" >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current">
+          <path d="M17.5 9.3125H4.15625L9.46875 3.90625C9.75 3.625 9.75 3.1875 9.46875 2.90625C9.1875 2.625 8.75 2.625 8.46875 2.90625L2 9.46875C1.71875 9.75 1.71875 10.1875 2 10.4688L8.46875 17.0312C8.59375 17.1562 8.78125 17.25 8.96875 17.25C9.15625 17.25 9.3125 17.1875 9.46875 17.0625C9.75 16.7812 9.75 16.3438 9.46875 16.0625L4.1875 10.7188H17.5C17.875 10.7188 18.1875 10.4062 18.1875 10.0312C18.1875 9.625 17.875 9.3125 17.5 9.3125Z" fill=""/>
+        </svg>
+      </button>
+      <div class="relative flex justify-center">
+        <div class="relative w-full md:w-12/12 md:pb-0 lg:w-11/12 xl:w-11/12" >
+          <div class="flex-no-wrap snap xs:max-w-[370px] mx-auto flex h-auto w-full max-w-[310px] overflow-hidden pt-7 transition-all sm:max-w-[510px] md:max-w-[640px] lg:max-w-[740px] 2xl:max-w-[860px]" x-ref="carousel" >
+            
+            <div class="xs:min-w-[368px] mx-auto h-full min-w-[300px] sm:min-w-[508px] md:min-w-[630px] lg:min-w-[738px] 2xl:min-w-[850px]" >
+              <div class="shadow-testimonial relative items-center overflow-hidden bg-white md:flex" >
+                <div class="w-full max-w-[320px] px-6 pt-10 sm:px-10 md:max-w-[320px] md:px-0 md:pt-0" >
+                  <img src="./assets/img/Mucha.webp" alt="Mucho" class="w-fit">
+                </div>
+                <div class="w-full px-6 py-10 sm:px-10 md:py-14">
+                  <h4 class="font-serif mb-5 text-2xl">
+                     Mucha
+                  </h4>
+                  <ul>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Executive therapy room.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Bright & Spacious.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Relaxation therapy.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Family, couples & individual therapy.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="xs:min-w-[368px] mx-auto h-full min-w-[300px] sm:min-w-[508px] md:min-w-[630px] lg:min-w-[738px] 2xl:min-w-[850px]" >
+              <div class="shadow-testimonial relative items-center overflow-hidden bg-white md:flex" >
+                <div class="w-full max-w-[320px] px-6 pt-10 sm:px-10 md:max-w-[320px] md:px-0 md:pt-0" >
+                  <img src="./assets/img/Picasso.webp" alt="Picasso" class="w-fit">
+                </div>
+                <div class="w-full px-6 py-10 sm:px-10 md:py-14">
+                  <h4 class="font-serif mb-5 text-2xl">
+                     Picasso
+                  </h4>
+                  <ul>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Neutral colors & comfortable seating.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Next to the entrance.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Seats up to 3 clients.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Individual & couple's therapy.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          
+            <div class="xs:min-w-[368px] mx-auto h-full min-w-[300px] sm:min-w-[508px] md:min-w-[630px] lg:min-w-[738px] 2xl:min-w-[850px]" >
+              <div class="shadow-testimonial relative items-center overflow-hidden bg-white md:flex" >
+                <div class="w-full max-w-[320px] px-6 pt-10 sm:px-10 md:max-w-[320px] md:px-0 md:pt-0">
+                  <img src="./assets/img/Chagall.webp" alt="Chagall" class="h-fit">
+                </div>
+                <div class="w-full px-6 py-10 sm:px-10 md:py-14">
+                  <h4 class="font-serif mb-5 text-2xl">
+                     Chagall
+                  </h4>
+                  <ul>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Multipurpose room.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Games, toys, arts, crafts, beanbags & more.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Adjusted as per the therapist's needs.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Individual, couples therapy & child therapy.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Storage for additional material.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Further set-up is still underway
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="xs:min-w-[368px] mx-auto h-full min-w-[300px] sm:min-w-[508px] md:min-w-[630px] lg:min-w-[738px] 2xl:min-w-[850px]" >
+              <div class="shadow-testimonial relative items-center overflow-hidden bg-white md:flex" >
+                <div class="w-full max-w-[320px] px-6 pt-10 sm:px-10 md:max-w-[320px] md:px-0 md:pt-0">
+                  <img src="./assets/img/Miro.webp" alt="Miro" class="h-fit">
+                </div>
+                <div class="w-full px-6 py-10 sm:px-10 md:py-14">
+                  <h4 class="font-serif mb-5 text-2xl">
+                     Miro
+                  </h4>
+                  <ul>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Next to waiting area.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Individual, couples & family therapy.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Earthy tones of blue-green & brown.
+                    </li>
+                    <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                      Designed for relaxation therapy
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="xs:min-w-[368px] mx-auto h-full min-w-[300px] sm:min-w-[508px] md:min-w-[630px] lg:min-w-[738px] 2xl:min-w-[850px]" >
+              <div class="shadow-testimonial relative items-center overflow-hidden bg-white md:flex" >
+                <div class="w-full max-w-[320px] px-6 pt-10 sm:px-10 md:max-w-[320px] md:px-0 md:pt-0">
+                   <img src="./assets/img/Workshops&GroupTherapy.webp" alt="Workshops-and-group-therapy" class="h-fit">
+                </div>
+                <div class="w-full px-6 py-10 sm:px-10 md:py-14">
+                   <h4 class="font-serif mb-5 text-2xl">
+                     State-of-the-art Workshop & Group Space
+                   </h4>
+                   <ul>
+                     <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                       Multifunctional & multipurpose room
+                     </li>
+                     <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                       85" Smart-Board & good acoustics.
+                     </li>
+                     <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                       30 persons for a workshop.
+                     </li>
+                     <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                       Bright chairs & beanbags.
+                     </li>
+                     <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                       16 people for a group therapy session.
+                     </li>
+                     <li class="flex gap-3 text-lg text-body-color">
+                      <img src="assets/img/check-mark.svg" class="h-6 w-6" alt="check mark">
+                       Refreshments & stationary.
+                     </li>
+                   </ul>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <button class="my-auto shadow-input hover:bg-[#4A90A3] rounded-md top-full left-auto right-[35%] flex h-10 w-10 items-center justify-center bg-white transition-all hover:text-white md:top-1/2 md:-right-12 lg:-right-16" @click="$refs.carousel.scrollLeft = $refs.carousel.scrollLeft + ($refs.carousel.scrollWidth / slides.length); activeSlide += 1" >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current">
+          <path d="M18 9.5L11.5312 2.9375C11.25 2.65625 10.8125 2.65625 10.5312 2.9375C10.25 3.21875 10.25 3.65625 10.5312 3.9375L15.7812 9.28125H2.5C2.125 9.28125 1.8125 9.59375 1.8125 9.96875C1.8125 10.3437 2.125 10.6875 2.5 10.6875H15.8437L10.5312 16.0938C10.25 16.375 10.25 16.8125 10.5312 17.0938C10.6562 17.2188 10.8437 17.2813 11.0312 17.2813C11.2187 17.2813 11.4062 17.2188 11.5312 17.0625L18 10.5C18.2812 10.2187 18.2812 9.78125 18 9.5Z" fill=""/>
+        </svg>
+      </button>
+    </div>
+    <div class="flex justify-center">
+      <button onclick="document.getElementById('join-aarc-dialog').showModal()" class="w-auto px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90">
+        Join AARC
+      </button>
+    </div>
+  </div>
+</section>
+<!-- ====== Rooms Section End -->
+
+
+    <!-- Workshops Section-->
+    <section id="workshops" class="h-[600px] px-5 md:px-10 lg:px-20 pt-40 pb-10 overflow-hidden">
+      <div x-data="{ isVisible: false }" x-intersect="isVisible = true" >
+        <div :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[200ms]': true }">
+          <h2 class="font-serif text-4xl text-center my-12">Workshops</h2>
+          <div class="flex row justify-center">
+            <p class="about-aarc-text times-new-roman">We will keep you posted on the latest workshops conducted and organized 
+              by <span class="raleway">AARC</span>. <br>Stay tuned for more information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+                  <!-- ====== Contact Section Start -->
+                  <section id="contact-us" class="bg-[#4A90A3] text-white bg-px-5 px-5 md:px-20 lg:px-40 xl:px-80">
+                    <div x-data="{ isVisible: false }" x-intersect="isVisible = true" class="bg-[#4A90A3] py-20 lg:py-[120px]">
+                       <!-- <div x-show="isVisible" x-transition.duration:2000ms.delay:200ms class="container mx-auto"> -->
+                        <div class="container mx-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms]': true }">
+
+                          <div class="flex flex-wrap -mx-4">
+                             <div class="w-full px-4">
+                                <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
+                                    <span class="block mb-2 text-lg font-semibold text-white">Contact Us</span>
+                                   <h2 class="font-serif mb-4 text-3xl sm:text-4xl md:text-[40px]" >Get in Touch With Us</h2>
+                                </div>
+                             </div>
+                             <div class="container mx-auto">
+                             <div class="bg-[#4A90A3] pt-4 pb-10 lg:pb-10">
+                                <div class="container mx-auto">
+                                   <div class="flex flex-wrap mx-auto">
+                                      <div class="w-full px-4 mx-auto md:w-1/3">
+                                        <div class="mb-10 text-center">
+                                           <div class="mx-auto mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-[#4A90A3] text-white sm:h-[130px] sm:w-[130px]" >
+                                            <svg width="43" height="42" viewBox="0 0 43 42" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                              <path d="M37.25 6.30005H5.75001C3.51876 6.30005 1.61563 8.13755 1.61563 10.4344V31.6969C1.61563 33.9282 3.45313 35.8313 5.75001 35.8313H37.25C39.4813 35.8313 41.3844 33.9938 41.3844 31.6969V10.3688C41.3844 8.13755 39.4813 6.30005 37.25 6.30005ZM37.25 9.25317C37.3156 9.25317 37.3813 9.25317 37.4469 9.25317L21.5 19.4907L5.55313 9.25317C5.61876 9.25317 5.68438 9.25317 5.75001 9.25317H37.25ZM37.25 32.7469H5.75001C5.09376 32.7469 4.56876 32.2219 4.56876 31.5657V12.1407L19.925 21.9844C20.3844 22.3125 20.9094 22.4438 21.4344 22.4438C21.9594 22.4438 22.4844 22.3125 22.9438 21.9844L38.3 12.1407V31.6313C38.4313 32.2875 37.9063 32.7469 37.25 32.7469Z" fill="currentColor" />
+                                            </svg>
+                                           </div>
+                                           <div class="text-center">
+                                              <h4 class="mb-3 text-lg font-semibold " >Email Address</h4>
+                                              <p class="text-base text-white">info@aarctherapy.com</p>
+                                           </div>
+                                        </div>
+                                     </div>
+                                   </div>
+                                </div>
+                             </div>
+                            </div>
+                          </div>
+                          <div>
+                             <form id="contact-us-form">
+                                <div class="flex flex-wrap justify-center -mx-4">
+                                   <div class="w-full px-4 md:w-1/2">
+                                      <div class="mb-7 lg:mb-9">
+                                         <label for="contact-us-first-name" class="block mb-3 text-base font-medium md:mb-5" >
+                                            <span>Your First Name</span> <span class="text-red-500">*</span>
+                                         </label>
+                                         <input required id="contact-us-first-name" autocomplete="off" type="text" class="w-full rounded border border-stroke bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]">
+                                      </div>
+                                   </div>
+                                   <div class="w-full px-4 md:w-1/2">
+                                      <div class="mb-7 lg:mb-9">
+                                         <label for="contact-us-last-name" class="block mb-3 text-base font-medium md:mb-5" >
+                                            <span>Your Last Name</span>
+                                            <span class="text-red-500">*</span>
+                                         </label>
+                                         <input required id="contact-us-last-name" autocomplete="off" type="text" class="w-full rounded border border-stroke bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]">
+                                      </div>
+                                   </div>
+                                   <div class="w-full px-4 md:w-1/2">
+                                    <div class="mb-7 lg:mb-9">
+                                       <label for="contact-us-email" class="block mb-3 text-base font-medium md:mb-5" >
+                                          <span>Your Email</span>
+                                          <span class="text-red-500">*</span>
+                                       </label>
+                                       <input required id="contact-us-email" type="email" autocomplete="off" class="w-full rounded border border-stroke bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]">
+                                    </div>
+                                 </div>
+                                 <div class="w-full px-4 md:w-1/2">
+                                    <div class="mb-7 lg:mb-9">
+                                       <label class="block mb-3 text-base font-medium md:mb-5" >
+                                          <span>Your Contact Number</span>
+                                          <span class="text-red-500">*</span>
+                                       </label>
+                                       <input required id="contact-us-contact-number" type="tel" autocomplete="off" class="w-full rounded border border-stroke bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]">
+                                    </div>
+                                 </div>
+                                   <div class="w-full px-4">
+                                      <div class="mb-7 lg:mb-9">
+                                         <label for="contact-us-message" class="block mb-3 text-base font-medium md:mb-5" >
+                                            <span>Your Message</span>
+                                            <span class="text-red-500">*</span>
+                                         </label>
+                                         <textarea required id="contact-us-message" autocomplete="off" rows="10" class="w-full resize-none rounded border border-stroke bg-white py-3 px-[14px] text-base leading-relaxed text-body-color outline-none focus:border-[#4A90A3] focus-visible:shadow-none md:py-4 md:px-[18px]"></textarea>
+                                      </div>
+                                   </div>
+                                   <div class="flex w-full px-4 sm:w-8/12 lg:w-4/12">
+                                      <div class="justify-center text-center">
+                                        <button id="contact-us-button" type="submit" class="block w-full border-white border-2 px-10 py-5 text-base font-medium text-center text-white transition rounded-md bg-[#4A90A3] hover:bg-opacity-90" >
+                                           Send Message
+                                           <img id="contact-us-send-icon" src="./assets/img/send.svg" class="pl-2 h-5 !inline" alt="send icon">
+                                        </button>
+                                        <img id="contact-us-loading-icon" src="./assets/img/loading.svg" class="text-white hidden pl-2 h-5" alt="loading icon">
+                                        <div id="contact-success" class="fixed z-30 bottom-0 py-5 px-16 w-auto hidden justify-center align-center !bg-green-300">
+                                          <p class="text-white">Your form has been sent.</p>
+                                        </div>
+                                        <div id="contact-failure" class="fixed z-30 bottom-0 py-5 px-16 w-auto hidden justify-center align-center !bg-red-300">
+                                          <p class="text-white">Your form could not be sent, please try again.</p>
+                                        </div>
+                                      </div>
+                                   </div>
+                                </div>
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                 </section>
+                 <!-- ====== Contact Section End -->
+
+
+                 <!-- ====== Footer Section Start -->
+<footer class="relative bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20 px-5 md:px-10">
+  <div class="container mx-auto">
+     <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+           <div class="w-full mb-10">
+              <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]" >
+                <img src="assets/img/aarc-logo-lg-rw.svg" alt="AARC Therapy Logo" class="max-w-full">
+              </a>
+              <p class="text-base text-body-color mb-7">
+                AARC | Assessment, Advisory and Remedial Center
+              </p>
+              <p class="flex items-center text-sm font-medium" >
+                 <!-- <span class="mr-3 text-[#4A90A3]">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                       <g clip-path="url(#clip0_941_15626)">
+                          <path d="M15.1875 19.4688C14.3438 19.4688 13.375 19.25 12.3125 18.8438C10.1875 18 7.84377 16.375 5.75002 14.2813C3.65627 12.1875 2.03127 9.84377 1.18752 7.68752C0.250019 5.37502 0.343769 3.46877 1.43752 2.40627C1.46877 2.37502 1.53127 2.34377 1.56252 2.31252L4.18752 0.750025C4.84377 0.375025 5.68752 0.562525 6.12502 1.18752L7.96877 3.93753C8.40627 4.59378 8.21877 5.46877 7.59377 5.90627L6.46877 6.68752C7.28127 8.00002 9.59377 11.2188 13.2813 13.5313L13.9688 12.5313C14.5 11.7813 15.3438 11.5625 16.0313 12.0313L18.7813 13.875C19.4063 14.3125 19.5938 15.1563 19.2188 15.8125L17.6563 18.4375C17.625 18.5 17.5938 18.5313 17.5625 18.5625C17 19.1563 16.1875 19.4688 15.1875 19.4688ZM2.37502 3.46878C1.78127 4.12503 1.81252 5.46877 2.50002 7.18752C3.28127 9.15627 4.78127 11.3125 6.75002 13.2813C8.68752 15.2188 10.875 16.7188 12.8125 17.5C14.5 18.1875 15.8438 18.2188 16.5313 17.625L18.0313 15.0625C18.0313 15.0313 18.0313 15.0313 18.0313 15L15.2813 13.1563C15.2813 13.1563 15.2188 13.1875 15.1563 13.2813L14.4688 14.2813C14.0313 14.9063 13.1875 15.0938 12.5625 14.6875C8.62502 12.25 6.18752 8.84377 5.31252 7.46877C4.90627 6.81252 5.06252 5.96878 5.68752 5.53128L6.81252 4.75002V4.71878L4.96877 1.96877C4.96877 1.93752 4.93752 1.93752 4.90627 1.96877L2.37502 3.46878Z" fill="currentColor" />
+                          <path d="M18.3125 8.90633C17.9375 8.90633 17.6563 8.62508 17.625 8.25008C17.375 5.09383 14.7813 2.56258 11.5938 2.34383C11.2188 2.31258 10.9063 2.00008 10.9375 1.59383C10.9688 1.21883 11.2813 0.906333 11.6875 0.937583C15.5625 1.18758 18.7188 4.25008 19.0313 8.12508C19.0625 8.50008 18.7813 8.84383 18.375 8.87508C18.375 8.90633 18.3438 8.90633 18.3125 8.90633Z" fill="currentColor" />
+                          <path d="M15.2187 9.18755C14.875 9.18755 14.5625 8.93755 14.5312 8.56255C14.3437 6.87505 13.0312 5.56255 11.3437 5.3438C10.9687 5.31255 10.6875 4.93755 10.7187 4.56255C10.75 4.18755 11.125 3.9063 11.5 3.93755C13.8437 4.2188 15.6562 6.0313 15.9375 8.37505C15.9687 8.75005 15.7187 9.0938 15.3125 9.1563C15.25 9.18755 15.2187 9.18755 15.2187 9.18755Z" fill="currentColor" />
+                       </g>
+                       <defs>
+                          <clipPath id="clip0_941_15626">
+                             <rect width="20" height="20" fill="white" />
+                          </clipPath>
+                       </defs>
+                    </svg>
+                 </span> -->
+                 <!-- <span>+012 (345) 678 99</span> -->
+              </p>
+           </div>
+        </div>
+        <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+           <div class="w-full mb-10">
+              <h4 class="text-lg font-semibold mb-9">
+                 Services
+              </h4>
+              <ul class="space-y-3">
+                 <li>
+                    <a href="#seek-therapy" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                      Therapy
+                    </a>
+                 </li>
+                 <li>
+                    <a href="#workshops" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                      Workshops
+                    </a>
+                 </li>
+                 <li>
+                    <a href="#join-aarc" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                      Join AARC
+                    </a>
+                 </li>
+              </ul>
+           </div>
+        </div>
+        <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+           <div class="w-full mb-10">
+              <h4 class="text-lg font-semibold mb-9">
+                 Company
+              </h4>
+              <ul class="space-y-3">
+                 <li>
+                    <a href="#about-aarc" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                      About Us
+                    </a>
+                 </li>
+                 <li>
+                    <a href="#our-team" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                      Our Team
+                    </a>
+                 </li>
+              </ul>
+           </div>
+        </div>
+        <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+           <div class="w-full mb-10">
+              <h4 class="text-lg font-semibold mb-9">
+                 Legal
+              </h4>
+              <ul class="space-y-3">
+                <li>
+                  <a href="privacy-policy.html" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="terms-and-conditions.html" class="inline-block text-base border-b-4 border-white hover:border-[#4A90A3] transition duration-300 ease-in-out leading-loose text-body-color hover:text-[#4A90A3]" >
+                    Terms & Conditions
+                  </a>
+                </li>
+              </ul>
+           </div>
+        </div>
+        <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
+           <div class="w-full mb-10">
+              <h4 class="text-lg font-semibold mb-9">
+                 Follow Us On
+              </h4>
+              <div class="flex items-center mb-6">
+                <a href="https://www.instagram.com/aarc.therapy/?igshid=MW9id2pxenl2cG85ZQ" class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full transition-all duration-500 hover:border-[#4A90A3] hover:bg-[#4A90A3] border-stroke hover:text-white sm:mr-4 lg:mr-3 xl:mr-4" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7.9a4.1 4.1 0 1 0 4.1 4.1A4.09 4.09 0 0 0 12 7.9Zm0 6.77A2.67 2.67 0 1 1 14.67 12A2.67 2.67 0 0 1 12 14.67Zm5.23-6.94a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm2.71 1a4.71 4.71 0 0 0-1.29-3.35a4.71 4.71 0 0 0-3.35-1.32C14 4 10 4 8.7 4.06a4.73 4.73 0 0 0-3.35 1.29A4.71 4.71 0 0 0 4.06 8.7C4 10 4 14 4.06 15.3a4.71 4.71 0 0 0 1.29 3.35a4.73 4.73 0 0 0 3.35 1.29c1.32.08 5.28.08 6.6 0a4.71 4.71 0 0 0 3.35-1.29a4.71 4.71 0 0 0 1.29-3.35c.06-1.3.06-5.3 0-6.6Zm-1.7 8a2.7 2.7 0 0 1-1.52 1.52a18 18 0 0 1-4.72.32a17.91 17.91 0 0 1-4.71-.32a2.7 2.7 0 0 1-1.52-1.52c-.42-1.06-.33-3.56-.33-4.72s-.09-3.67.33-4.72a2.65 2.65 0 0 1 1.52-1.53A17.91 17.91 0 0 1 12 5.44a18 18 0 0 1 4.72.32a2.7 2.7 0 0 1 1.52 1.52c.42 1.06.32 3.56.32 4.72s.1 3.67-.32 4.72Z"/></svg>                 
+                </a>
+                <!-- <a href="https://www.instagram.com/aarc.therapy/?igshid=MW9id2pxenl2cG85ZQ" class="flex items-center justify-center w-8 h-8 mr-3 border rounded-full hover:border-[#4A90A3] hover:bg-[#4A90A3] border-stroke hover:text-white sm:mr-4 lg:mr-3 xl:mr-4" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="currentColor" d="M18.72 4H5.37A1.31 1.31 0 0 0 4 5.25v13.38A1.41 1.41 0 0 0 5.37 20h13.35A1.34 1.34 0 0 0 20 18.63V5.25A1.23 1.23 0 0 0 18.72 4ZM9 17.34H6.67v-7.13H9ZM7.89 9.13A1.18 1.18 0 0 1 6.67 7.9a1.18 1.18 0 0 1 1.24-1.23A1.18 1.18 0 0 1 9.13 7.9a1.18 1.18 0 0 1-1.24 1.23Zm9.45 8.21H15v-3.9c0-.93-.33-1.57-1.16-1.57a1.25 1.25 0 0 0-1.17.84a1.43 1.43 0 0 0-.08.57v4.06h-2.3v-7.13h2.3v1a2.32 2.32 0 0 1 2.1-1.21c1.51 0 2.65 1 2.65 3.13Z"/></svg>
+                </a> -->
+              </div>
+              <p class="text-base text-body-color">
+                 &copy; 2025 AARC Therapy
+              </p>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div>
+     <span class="absolute left-0 bottom-0 z-[-1]">
+        <svg width="217" height="229" viewBox="0 0 217 229" fill="none" xmlns="http://www.w3.org/2000/svg" >
+           <path d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z" fill="url(#paint0_linear_1179_5)" />
+           <defs>
+              <linearGradient id="paint0_linear_1179_5" x1="76.5" y1="281" x2="76.5" y2="1.22829e-05" gradientUnits="userSpaceOnUse" >
+                 <stop stop-color="#3056D3" stop-opacity="0.08" />
+                 <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+              </linearGradient>
+           </defs>
+        </svg>
+     </span>
+     <span class="absolute top-10 right-10 z-[-1]">
+        <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg" >
+           <path d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z" fill="url(#paint0_linear_1179_4)" />
+           <defs>
+              <linearGradient id="paint0_linear_1179_4" x1="-1.63917e-06" y1="37.5" x2="75" y2="37.5" gradientUnits="userSpaceOnUse" >
+                 <stop stop-color="#13C296" stop-opacity="0.31" />
+                 <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+              </linearGradient>
+           </defs>
+        </svg>
+     </span>
+  </div>
+</footer>
+<!-- ====== Footer Section End -->
+        <script src="/assets/js/script.nc.js"></script>
+    </body>
+</html>
