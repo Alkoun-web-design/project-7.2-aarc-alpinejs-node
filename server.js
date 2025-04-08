@@ -44,7 +44,7 @@ app.use(express.json());
 app.post('/', 
     body('firstName').escape().trim().notEmpty().withMessage('Your first name is required.'),
     body('lastName').escape().trim().notEmpty().withMessage('Your last name is required.'),
-    body('contactNumber').trim().notEmpty().isLength({min:11, max:15}).withMessage('Your contact number must be between 11 and 15 digits.'),
+    body('contactNumber').trim().notEmpty().isLength({min:10, max:20}).withMessage('Your contact number must be between 10 and 20 digits.'),
     body('email').trim().notEmpty().isEmail().withMessage('A valid email address is required.'),
     body('message').if(body('form').isIn('Contact Form')).trim().exists().notEmpty().withMessage('A message is required.'),
     body('qualifications').if(body('form').isIn('Interest Form')).exists().isIn(["Master's in Counselling or Clinical Psychology", 'Certification or Diploma in Psychotherapy', 'Other...']).withMessage('An option must be selected.'),
@@ -57,12 +57,12 @@ app.post('/',
     const errors = validationResult(req)
     if (req.body.form === 'Contact Form'){
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() })
+            return res.status(400).json({ errors: errors.array() });        
         } else {
             let mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
-            subject: req.body.form,
+            subject: `${req.body.form}, by ${req.body.firstName} ${req.body.lastName}`,
             html:`
             <p><strong>First Name:</strong> ${req.body.firstName}</p>
             <p><strong>Last Name:</strong> ${req.body.lastName}</p>
@@ -72,8 +72,8 @@ app.post('/',
             `}
             transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
-                    console.log(error);
-                    return res.json({ error: error });
+                    console.error('Email error:', error);
+                    return res.status(500).json({ error: 'Failed to send email. Please try again later.' });
                 } else {
                     console.log('Email Sent.' + info.response );
                     return res.send('success');
@@ -82,13 +82,13 @@ app.post('/',
         }
     } else if (req.body.form === 'Interest Form') {
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() })
+            return res.status(400).json({ errors: errors.array() });
         } else {
             console.log(req.body);
             let mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
-            subject: req.body.form,
+            subject: `${req.body.form}, by ${req.body.firstName} ${req.body.lastName}`,
             html:`
             <p><strong>First Name:</strong> ${req.body.firstName}</p>
             <p><strong>Last Name:</strong> ${req.body.lastName}</p>
@@ -100,8 +100,8 @@ app.post('/',
             `}
             transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
-                    console.log(error);
-                    return res.json({ error: error });
+                    console.error('Email error:', error);
+                    return res.status(500).json({ error: 'Failed to send email. Please try again later.' });
                 } else {
                     console.log('Email Sent.' + info.response );
                     res.send('success');
@@ -110,13 +110,13 @@ app.post('/',
         }
     } else if(req.body.form === 'Seek Therapy Form') { 
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() })
+            return res.status(400).json({ errors: errors.array() });
         } else {
             console.log(req.body);
             let mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
-            subject: req.body.form,
+            subject: `${req.body.form}, by ${req.body.firstName} ${req.body.lastName}`,
             // html:`
             // <p><strong>First Name:</strong> ${req.body.firstName}</p>
             // <p><strong>Last Name:</strong> ${req.body.lastName}</p>
@@ -137,8 +137,8 @@ app.post('/',
     
             transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
-                    console.log(error);
-                    return res.json({ error: error });
+                    console.error('Email error:', error);
+                    return res.status(500).json({ error: 'Failed to send email. Please try again later.' });
                 } else {
                     console.log('Email Sent.' + info.response );
                     return res.send('success');

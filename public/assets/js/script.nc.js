@@ -19,10 +19,13 @@ const contactLoadingIcon = document.getElementById('contact-us-loading-icon');
 
 const seekTherapySuccess = document.getElementById('seek-therapy-success');
 const seekTherapyFailure = document.getElementById('seek-therapy-failure');
+const seekTherapyFailureText = document.querySelector('#seek-therapy-failure p');
 const joinAarcSuccess = document.getElementById('join-aarc-success');
 const joinAarcFailure = document.getElementById('join-aarc-failure');
+const joinAarcFailureText = document.querySelector('#join-aarc-failure p');
 const contactSuccess = document.getElementById('contact-success');
 const contactFailure = document.getElementById('contact-failure');
+const contactFailureText = document.querySelector('#contact-failure p');
 
 // const contactValidMsg = document.querySelector('#contact-us.valid');
 const contactUsFirstName = document.getElementById('contact-us-first-name');
@@ -51,24 +54,18 @@ const interestInterest = document.getElementById('interest-interest');
 
   
 //Sending Form Data and error handling
-const sendMailData = (sendData, sendButton, sendIcon, successMsg, failureMsg) => {
-// const sendMailData = (sendData) => {
+const sendMail = async function (sendData, sendButton, sendIcon, successMsg, failureMsg, failureMsgText) {
   sendButton.classList.add('hidden');
   sendIcon.classList.remove('hidden');
   sendIcon.classList.add('flex', 'animate-spin');
   
-  fetch('/', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(sendData)
-  })
-  
-  .then(response => {
-    let data = response; 
-    return data;
-  })
-  
-  .then(data => {
+  try {
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(sendData)
+    });
+    const data = await response.json();
     if (!data.ok) {
       throw new Error(error)
     } else {
@@ -81,29 +78,74 @@ const sendMailData = (sendData, sendButton, sendIcon, successMsg, failureMsg) =>
         setTimeout(() => {
           successMsg.classList.remove('flex')
           successMsg.classList.add('hidden')
-          console.log('timeout')
         }, 5000 )
       // }())
     }
-  })
-  
-  .catch((error) => {
-    // (function() {
-      sendButton.classList.remove('hidden')
-      sendIcon.classList.remove('flex', 'animate-spin');
-      sendIcon.classList.add('hidden')
-      failureMsg.classList.add('flex')
-      failureMsg.classList.remove('hidden')
-      setTimeout(() => {
-        failureMsg.classList.remove('flex')
-        failureMsg.classList.add('hidden')
-        console.log('timeout')
-      }, 5000 )
-      console.warn(error.message)
-    // }())
-  })
-  
+  } catch (error) {
+    sendButton.classList.remove('hidden')
+    sendIcon.classList.remove('flex', 'animate-spin');
+    sendIcon.classList.add('hidden')
+    failureMsgText.textContent = 
+    failureMsg.classList.add('flex')
+    failureMsg.classList.remove('hidden')
+    setTimeout(() => {
+      failureMsg.classList.remove('flex')
+      failureMsg.classList.add('hidden')
+    }, 5000 )
+    console.warn(error)
+  }
 }
+const sendMailData = (sendData, sendButton, sendIcon, successMsg, failureMsg, failureMsgText) => {
+// const sendMailData = (sendData) => {
+  sendButton.classList.add('hidden');
+  sendIcon.classList.remove('hidden');
+  sendIcon.classList.add('flex', 'animate-spin');
+  
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(sendData)
+  })
+  
+  .then(response => { 
+    if (!response.ok) {
+      return response.json().then(err => Promise.reject(err));
+    }
+    return response.text();
+  })
+  
+  .then(data => {
+    // Success case
+    sendButton.classList.remove('hidden');
+    sendIcon.classList.remove('flex', 'animate-spin');
+    sendIcon.classList.add('hidden');
+    successMsg.classList.add('flex');
+    successMsg.classList.remove('hidden');
+    setTimeout(() => {
+      successMsg.classList.remove('flex');
+      successMsg.classList.add('hidden');
+    }, 5000);
+  })
+  .catch(error => {
+    // Error case (network error, server error, or validation error)
+    sendButton.classList.remove('hidden');
+    sendIcon.classList.remove('flex', 'animate-spin');
+    sendIcon.classList.add('hidden');
+    if (error.errors) {
+      // Validation error from server (400)
+      failureMsgText.textContent = error.errors[0].msg
+    } else {
+      // Other errors (network, server 500, etc.)
+      failureMsgText.textContent = error.message || error
+    }
+    failureMsg.classList.add('flex');
+    failureMsg.classList.remove('hidden');
+    setTimeout(() => {
+      failureMsg.classList.remove('flex');
+      failureMsg.classList.add('hidden');
+    }, 8000);
+  });
+};
 
 //Contact Us Form
 contactUsForm.addEventListener('submit', (e) => {
@@ -118,7 +160,7 @@ contactUsForm.addEventListener('submit', (e) => {
     message : contactUsMessage.value.trim()
   }
 
-    sendMailData(formData, contactUsButton, contactLoadingIcon, contactSuccess, contactFailure)
+    sendMailData(formData, contactUsButton, contactLoadingIcon, contactSuccess, contactFailure, contactFailureText)
     // sendMailData(formData)
 
 })
@@ -137,7 +179,7 @@ seekTherapyForm.addEventListener('submit', (e) => {
     needs: seekTherapyNeeds.value.trim()
   }
 
-    sendMailData(formData, seekTherapyButton, seekTherapyLoadingIcon, seekTherapySuccess, seekTherapyFailure);
+    sendMailData(formData, seekTherapyButton, seekTherapyLoadingIcon, seekTherapySuccess, seekTherapyFailure, seekTherapyFailureText);
     // sendMailData(formData)
 
 })
@@ -157,7 +199,7 @@ interestForm.addEventListener('submit', (e) => {
     interest: interestInterest.value
   }
 
-  sendMailData(formData, interestButton, interestLoadingIcon, joinAarcSuccess, joinAarcFailure)
+  sendMailData(formData, interestButton, interestLoadingIcon, joinAarcSuccess, joinAarcFailure, joinAarcFailureText)
   // sendMailData(formData)
 
 })  
