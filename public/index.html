@@ -959,6 +959,40 @@
           </div>
         </div>
       </div>
+
+      <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[800ms]': true }">
+        <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+          <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+            <img src="assets/img/arooj-jamal-ahmad.webp" alt="Arooj Jamal Ahmad" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+            <div class="absolute bottom-5 left-0 w-full text-center">
+              <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                <h3 class="font-serif text-base mb-1">
+                  Arooj Jamal Ahmad
+                </h3>
+                <p class="text-white text-xs mb-1">MS/MPhil in Clinical Psychology and Counseling</p>
+                <p class="text-white text-xs mb-1">Diplomas (UK) in psychodynamic, humanistic, and integrative psychotherapy</p>
+              </div>
+            </div>
+          </div>
+          <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+            <p class="mb-4 mt-2">With an MS/MPhil in Clinical Psychology and Counseling, along with various Diplomas (UK) in psychodynamic, 
+              humanistic, and integrative psychotherapy, I bring over a decade of experience to my work as a relational and integrative 
+              psychotherapist. I have been practicing individual counseling and psychotherapy since 2013, offering one-to-one therapy for 
+              adults (18+), with a strong emphasis on somatic resonance and trauma-informed care. I am also a CPCAB (UK )certified clinical 
+              supervisor.
+            </p>
+            <p class="my-4">
+              Fluent in English, Urdu, and Punjabi, I work with clients not only across Pakistan but also internationally, including the USA, 
+              UK, and UAE. My approach is grounded in the belief that every human being holds the potential for transformation—and that a 
+              therapist’s role is to compassionately support that journey.</p>
+            <p class="my-4">Beyond clinical work, I have extensive experience teaching Psychology subjects at undergraduate and graduate 
+              levels, facilitating relational group processes and experiential group teaching: a keen interest in internationally published 
+              psychological research and extensive training in conducting Psychological testing. I am currently enrolled in Gabor Maté’s 
+              international Compassionate Inquiry training (Canada) and have completed Level 3 training in Child Accelerated Trauma Treatment 
+              (UK).</p>
+          </div>
+        </div>
+      </div>
       
     </div>
   </div>
