@@ -843,6 +843,37 @@
           </div>
         </div>
 
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1800ms]': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/ambreen-nadeem.webp" alt="Ambreen Nadeem" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Ambreen Nadeem
+                  </h3>
+                  <p class="text-white text-xs mb-1">Integrative Psychotherapist, IFS Informed and EMDR Therapist, NLP Master Practitioner 
+                    and Coach BA in psychology. Certificate in counselling CPCAB (UK), Diploma in Integrative counselling CPCAB (UK).</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">I’m an integrative psychotherapist and counsellor offering individual therapy to adolescents and 
+                adults aged 16 and above. With years of experience in the mental health field, I provide a supportive, safe, and 
+                nonjudgmental space for clients to explore the emotional challenges and transitions life brings. My approach is 
+                relational and client-centered—I believe that the therapeutic relationship itself is a powerful foundation for 
+                healing. I combine a range of therapeutic models, including psychodynamic therapy, EMDR, humanistic therapy, IFS-
+                informed work, and NLP. I tailor each session according to the unique needs of the client.</p>
+              <p class="my-4">I work with issues such as anxiety, depression, trauma, abandonment, emotional regulation, and life 
+                transitions—helping clients understand patterns, heal emotional wounds, and reconnect with themselves. My role isn’t 
+                to fix, but to walk alongside—offering clarity, perspective, and evidence-based tools that help you grow stronger from 
+                the inside out.</p> 
+              <p class="my-4">If you’re ready to understand yourself more deeply, heal past wounds, and move forward with more purpose 
+                and peace, I’d be honoured to work with you.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
