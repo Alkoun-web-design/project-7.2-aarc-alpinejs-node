@@ -1126,6 +1126,36 @@
           </div>
         </div>
 
+        <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-600': true }">
+          <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+            <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+              <img src="assets/img/imaan-khalid.webp" alt="Imaan Khalid" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+              <div class="absolute bottom-5 left-0 w-full text-center">
+                <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                  <h3 class="font-serif text-base mb-1">
+                    Imaan Khalid
+                  </h3>
+                  <p class="text-white text-xs mb-1">Assistant Psychologist, BSc. (Hons) in Applied Psychology</p>
+                </div>
+              </div>
+            </div>
+            <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+              <p class="mb-4 mt-2">As a passionate and empathetic aspiring therapist, I hold a BSc. (Hons) in Applied Psychology 
+                and am currently on my way to pursue a Master’s in Counselling and Psychotherapy. 
+              </p>
+              <p class="my-4">Following graduation, I gained hands-on experience working at a children’s mental health center,
+                 where I supported children on the autism spectrum, as well as those navigating ADHD, social anxiety, and 
+                 separation anxiety. This experience deepened my commitment to creating safe and supportive spaces for children
+                  and their families while honing my observational and communication skills.
+              </p>
+              <p class="my-4">At AARC, I currently serve as an Assistant Psychologist and Intake Officer, where I play an active
+                 role in initial assessments and ongoing client support. I hope to bring warmth, empathy, and dedication to every
+                  interaction as I aid you through your mental health journey.
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
