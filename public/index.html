@@ -1083,6 +1083,37 @@
           </div>
         </div>
       </div>
+
+      <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1400ms]': true }">
+        <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+          <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+            <img src="assets/img/areeba-khan.webp" alt="Areeba Khan" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+            <div class="absolute bottom-5 left-0 w-full text-center">
+              <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                <h3 class="font-serif text-base mb-1">
+                  Areeba Khan
+                </h3>
+                <p class="text-white text-xs mb-1">MS Mental Health Counseling (University of Massachusetts - Boston, USA)
+                </p>
+              </div>
+            </div>
+          </div>
+          <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+            <p class="my-4 mt-2">With a master's degree in Mental Health Counseling and clinical experience spanning diverse client 
+              populations in both Pakistan and the United States, I specialize in supporting individuals facing challenges such as 
+              anxiety, depression, unresolved trauma, low self-esteem, eating disorders, and difficulties adjusting to life transitions. 
+              Over the past two years, I've completed over 1,000 hours of supervised clinical work across various clinical and 
+              community-based settings.</p> 
+            <p class="my-4">My integrative, trauma-informed approach draws from evidence-based modalities such as Person-Centered Therapy, 
+              Cognitive Behavioral Therapy, and Dialectical Behavior Therapy. I prioritize working with a strengths-based lens, 
+              recognizing not only my clients' struggles but also the resilience and coping strategies they bring to the table.</p>
+            <p class="my-4">By fostering warm, empathetic relationships and tailoring interventions to each client's unique needs, I 
+              encourage active participation in their therapeutic journey for lasting personal growth and healing. Committed to 
+              mental health advocacy and holistic wellness, I am dedicated to providing compassionate, client-centered care that makes 
+              a meaningful difference in the lives of those I serve.</p>
+          </div>
+        </div>
+      </div>
       
     </div>
   </div>
