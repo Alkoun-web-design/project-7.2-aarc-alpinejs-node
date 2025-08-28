@@ -1910,6 +1910,22 @@ input[type="radio"]:checked ~ .box .circle background {
   transition-delay: 800ms;
 }
 
+.delay-\[2000ms\] {
+  transition-delay: 2000ms;
+}
+
+.delay-\[2200ms\] {
+  transition-delay: 2200ms;
+}
+
+.delay-\[2400ms\] {
+  transition-delay: 2400ms;
+}
+
+.delay-\[2600ms\] {
+  transition-delay: 2600ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
