@@ -1208,6 +1208,39 @@
           </div>
         </div>
       </div>
+
+      <div class="mx-6 mb-10 w-auto h-auto" :class="{ 'opacity-0': !isVisible, 'opacity-100': isVisible, 'transition-all duration-[2000ms] delay-[1600ms]': true }">
+        <div x-data="{ profileIsVisible: false }" @click="profileIsVisible = !profileIsVisible" class="transition-all duration-500 ease-in-out hover:shadow-lg hover:-translate-y-4 w-full max-w-[370px]">
+          <div class="relative overflow-hidden rounded-lg hover:cursor-pointer">
+            <img src="assets/img/ahmad-butt.webp" alt="Ahmad Butt" loading=lazy class="w-[370px] h-[600px] object-cover object-center">
+            <div class="absolute bottom-5 left-0 w-full text-center">
+              <div class="relative mx-5 overflow-hidden rounded-lg bg-[#4A90A3] text-white py-5 px-3" >
+                <h3 class="font-serif text-base mb-1">
+                  Ahmad Butt
+                </h3>
+                <p class="text-white text-xs mb-1">Trauma-informed Therapist</p>
+                <p class="text-white text-xs mb-1">Integrative Psychotherapist</p>
+              </div>
+            </div>
+          </div>
+          <div x-cloak x-show="profileIsVisible" x-transition.duration.500ms class="text-sm w-auto h-auto rounded-md px-2 py-4">
+            <p class="my-4 mt-2">I am a psychotherapist who earned my M.A. in Mental Health Counseling from Boston College on the Fulbright
+               Scholarship. My training combined rigorous academic study with extensive clinical practice, giving me a strong foundation in
+                trauma-informed, relational, and evidence-based approaches.</p> 
+            <p class="my-4">My professional experience includes providing individual, couples, family, and group therapy at Boston Post 
+              Adoption Resources in the U.S., where I worked with clients navigating trauma, identity exploration, relationship challenges, 
+              and life transitions. Having practiced in both Pakistan and the U.S., I bring a cross-cultural perspective that deepens my 
+              understanding of how culture and context shape the healing process. I have also worked with Intimate Partner Abuse Education 
+              Programs in the U.S., co-leading groups that support accountability, partner and child safety, and long-term relational 
+              change.</p>
+            <p class="my-4">In my work, I take a trauma-informed, integrative, and relational approach, creating a supportive space where 
+              clients feel heard and understood. I help clients explore different parts of themselves, cultivate self-compassion, and build 
+              more trusting relationships. I often integrate mindfulness and creative methods to encourage authentic growth at a pace that 
+              feels right for them. I work with individuals, couples, and families, supporting children, adolescents, and adults in 
+              reconnecting with their own capacity for healing and growth.</p>
+          </div>
+        </div>
+      </div>
       
     </div>
   </div>
